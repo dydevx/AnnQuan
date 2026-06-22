@@ -946,7 +946,7 @@ textarea {
 
 .site-footer {
   margin-top: 52px;
-  padding: 48px 0 100px;
+  padding: 34px 0 76px;
   color: var(--muted);
   border-top: 1px solid rgba(215, 183, 91, 0.18);
   background:
@@ -963,17 +963,24 @@ textarea {
 
 .footer-inner {
   display: grid;
-  grid-template-columns: 1.2fr 1fr 1fr 0.9fr;
-  gap: 28px;
+  grid-template-columns: 1.25fr 1fr 1.3fr 1.35fr;
+  gap: 34px;
+  align-items: start;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
 }
 
 .footer-brand img {
-  width: 72px;
-  height: 72px;
+  width: 64px;
+  height: 64px;
+  flex: 0 0 auto;
   object-fit: contain;
   border-radius: 8px;
   background: #f7f0df;
-  margin-bottom: 12px;
 }
 
 .footer-brand p,
@@ -984,22 +991,42 @@ textarea {
 }
 
 .footer-brand p {
-  max-width: 260px;
+  max-width: none;
   color: var(--ink);
+  line-height: 1.35;
 }
 
 .footer-inner p,
 .footer-inner a {
-  display: block;
-  margin: 7px 0;
+  margin: 5px 0;
   color: var(--muted);
-  line-height: 1.55;
+  line-height: 1.45;
   transition: color 180ms ease, transform 180ms ease;
+}
+
+.footer-inner p {
+  white-space: normal;
 }
 
 .footer-inner a:hover {
   color: var(--green);
   transform: translateX(3px);
+}
+
+.footer-inner div:last-child {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px 14px;
+  align-items: center;
+}
+
+.footer-inner div:last-child h3 {
+  flex-basis: 100%;
+}
+
+.footer-inner div:last-child a {
+  margin: 0;
+  white-space: nowrap;
 }
 
 .footer-bottom {
@@ -1008,7 +1035,7 @@ textarea {
   justify-items: center;
   text-align: center;
   margin-top: 36px;
-  padding-top: 18px;
+  padding-top: 16px;
   border-top: 1px solid rgba(215, 183, 91, 0.2);
   color: rgba(203, 185, 143, 0.9);
 }
@@ -1348,6 +1375,16 @@ textarea {
   }
 }
 
+@media (max-width: 1180px) {
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-inner p {
+    white-space: normal;
+  }
+}
+
 @media (max-width: 1060px) {
   .header-cta {
     display: none;
@@ -1546,6 +1583,10 @@ textarea {
   .dish-grid,
   .footer-inner {
     grid-template-columns: 1fr;
+  }
+
+  .footer-brand {
+    align-items: flex-start;
   }
 
   .dish-card img {
