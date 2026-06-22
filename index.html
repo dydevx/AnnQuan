@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ann-Quán Vietnamesisches Restaurant | Chemnitz</title>
+  <meta name="description" content="Ann-Quán Vietnamesisches Restaurant in Chemnitz: authentische vietnamesische Küche, Tischreservierung und Essen zum Mitnehmen über WhatsApp." />
+  <meta property="og:title" content="Ann-Quán Vietnamesisches Restaurant" />
+  <meta property="og:description" content="Authentische vietnamesische Küche in Chemnitz. Reservieren Sie einen Tisch oder bestellen Sie Essen zum Mitnehmen." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:image" content="logo.jpg" />
+  <link rel="icon" href="logo.jpg" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="is-loading">
+  <div class="page-loader" id="pageLoader" aria-label="Seite wird geladen">
+    <div class="loader-mark">
+      <img src="logo.jpg" alt="Ann-Quán Logo" />
+      <span></span>
+    </div>
+  </div>
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <a class="brand" href="#home" aria-label="Ann-Quán Startseite">
+        <img src="logo.jpg" alt="Ann-Quán Logo" class="brand-logo" loading="lazy" />
+        <span class="brand-copy">
+          <span class="brand-name">Ann-Quán</span>
+          <span class="brand-subtitle">Vietnamesisches Restaurant</span>
+        </span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Menü öffnen" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="main-nav" id="mainNav" aria-label="Hauptnavigation">
+        <a href="#home">Startseite</a>
+        <a href="#about">Über uns</a>
+        <a href="#menu">Speisekarte</a>
+        <a href="#cart">Warenkorb</a>
+        <a href="#reservation">Reservierung</a>
+        <a href="#opening">Öffnungszeiten</a>
+        <a href="#contact">Kontakt</a>
+      </nav>
+
+      <a class="button button-primary header-cta" href="#reservation">Jetzt reservieren</a>
+      <button class="header-cart-button" id="floatingCartButton" type="button" aria-label="Warenkorb öffnen" aria-controls="cartPreviewPanel" aria-expanded="false">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
+          <path d="M6 6h15l-1.5 8.5H8L6 3H3" />
+          <path d="M8.5 19.5h.01" />
+          <path d="M18 19.5h.01" />
+        </svg>
+        <span class="floating-cart-count" id="floatingCartCount" hidden>0</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home" aria-label="Ann-Quán">
+      <img src="Pho Ga Groß.jpg" alt="Phở Gà bei Ann-Quán" class="hero-image" loading="eager" fetchpriority="high" />
+      <div class="hero-shade"></div>
+      <div class="hero-inner">
+        <div class="hero-content reveal">
+          <p class="eyebrow">Authentische vietnamesische Küche in Chemnitz</p>
+          <h1><span class="nowrap">Willkommen bei</span> <span class="nowrap">Ann-Quán</span></h1>
+          <p>Entdecken Sie traditionelle vietnamesische Gerichte, frisch zubereitet mit ausgewählten Zutaten und viel Liebe.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#reservation">Tisch reservieren</a>
+            <a class="button button-light" href="#menu">Essen bestellen</a>
+            <a class="button button-outline-light" href="#menu">Speisekarte ansehen</a>
+          </div>
+        </div>
+        <figure class="hero-plate reveal">
+          <img src="Pho Ga Groß.jpg" alt="Phở Gà bei Ann-Quán" loading="eager" fetchpriority="high" />
+        </figure>
+      </div>
+    </section>
+
+    <section class="section about-section" id="about">
+      <div class="split-layout">
+        <div class="section-copy reveal">
+          <p class="section-kicker">Über Ann-Quán</p>
+          <h2>Über Ann-Quán</h2>
+          <p>Im Ann-Quán erleben Sie die vielfältigen Aromen der vietnamesischen Küche. Unsere Speisen werden frisch zubereitet und verbinden traditionelle Rezepte mit einem modernen Geschmackserlebnis.</p>
+          <p>Ob ein gemütliches Abendessen, ein Treffen mit Freunden oder eine Bestellung zum Mitnehmen – wir freuen uns darauf, Sie bei uns begrüßen zu dürfen.</p>
+        </div>
+        <figure class="media-panel about-media reveal">
+          <img src="Bun Cha Ha Noi.jpg" alt="Bún Chả Hà Nội bei Ann-Quán" loading="lazy" />
+        </figure>
+      </div>
+    </section>
+
+    <section class="section specialties-section" id="specialties">
+      <div class="section-heading reveal">
+        <p class="section-kicker">Unsere Spezialitäten</p>
+        <h2>Unsere Spezialitäten</h2>
+      </div>
+      <div class="dish-grid" id="specialtyGrid"></div>
+    </section>
+
+    <section class="section menu-section" id="menu">
+      <div class="section-heading reveal">
+        <p class="section-kicker">Unsere Speisekarte</p>
+        <h2>Unsere Speisekarte</h2>
+        <p class="section-intro">Wählen Sie Gerichte aus und senden Sie Ihre Bestellung direkt über WhatsApp.</p>
+        <div class="menu-pager" id="menuPager" aria-label="Speisekarte Kategorien"></div>
+      </div>
+      <div class="menu-layout">
+        <div class="menu-text-list" id="menuList"></div>
+        <aside class="cart-panel reveal" id="cart">
+          <div class="cart-head">
+            <p class="section-kicker">Warenkorb</p>
+            <h3>Ihre Bestellung</h3>
+          </div>
+          <div class="cart-items" id="cartItems">
+            <p class="cart-empty">Ihr Warenkorb ist noch leer.</p>
+          </div>
+          <div class="cart-total">
+            <span>Summe</span>
+            <strong id="cartTotal">0,00€</strong>
+          </div>
+          <form class="cart-form" id="cartForm">
+            <label for="cartName">Name</label>
+            <input type="text" id="cartName" name="cartName" autocomplete="name" required />
+
+            <label for="cartPhone">Telefonnummer</label>
+            <input type="tel" id="cartPhone" name="cartPhone" autocomplete="tel" required />
+
+            <label for="cartPickup">Abholzeit</label>
+            <input type="time" id="cartPickup" name="cartPickup" required />
+
+            <label for="cartNote">Anmerkung</label>
+            <textarea id="cartNote" name="cartNote" rows="3"></textarea>
+
+            <button class="button button-primary" id="cartSubmit" type="submit" disabled>Bestellung über WhatsApp senden</button>
+          </form>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section reservation-section" id="reservation">
+      <div class="section-heading reveal">
+        <p class="section-kicker">Tisch reservieren</p>
+        <h2>Tisch reservieren</h2>
+      </div>
+      <form class="form-panel reveal" id="reservationForm">
+        <div class="form-row">
+          <label for="resName">Name</label>
+          <input type="text" id="resName" name="resName" autocomplete="name" required />
+        </div>
+        <div class="form-row">
+          <label for="resPhone">Telefonnummer</label>
+          <input type="tel" id="resPhone" name="resPhone" autocomplete="tel" required />
+        </div>
+        <div class="form-row">
+          <label for="resDate">Datum</label>
+          <input type="date" id="resDate" name="resDate" required />
+        </div>
+        <div class="form-row">
+          <label for="resTime">Uhrzeit</label>
+          <input type="time" id="resTime" name="resTime" required />
+        </div>
+        <div class="form-row">
+          <label for="resGuests">Anzahl der Personen</label>
+          <input type="number" id="resGuests" name="resGuests" min="1" required />
+        </div>
+        <div class="form-row full">
+          <label for="resNote">Anmerkung</label>
+          <textarea id="resNote" name="resNote" rows="4"></textarea>
+        </div>
+        <button class="button button-primary full" type="submit">Reservierung über WhatsApp senden</button>
+      </form>
+    </section>
+
+    <section class="section opening-section" id="opening">
+      <div class="section-heading reveal">
+        <p class="section-kicker">Öffnungszeiten</p>
+        <h2>Öffnungszeiten</h2>
+      </div>
+      <div class="opening-list reveal" id="openingList">
+        <div class="opening-day" data-day="Monday"><span>Montag</span><strong>Geschlossen</strong></div>
+        <div class="opening-day" data-day="Tuesday"><span>Dienstag</span><strong>17:00 – 22:30 Uhr</strong></div>
+        <div class="opening-day" data-day="Wednesday"><span>Mittwoch</span><strong>17:00 – 22:30 Uhr</strong></div>
+        <div class="opening-day" data-day="Thursday"><span>Donnerstag</span><strong>17:00 – 22:30 Uhr</strong></div>
+        <div class="opening-day" data-day="Friday"><span>Freitag</span><strong>17:00 – 22:30 Uhr</strong></div>
+        <div class="opening-day" data-day="Saturday"><span>Samstag</span><strong>17:00 – 22:30 Uhr</strong></div>
+        <div class="opening-day" data-day="Sunday"><span>Sonntag</span><strong>11:00 – 14:00 Uhr und 17:00 – 22:30 Uhr</strong></div>
+      </div>
+      <p class="opening-note reveal">An Feiertagen können die Öffnungszeiten abweichen.</p>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="section-heading reveal">
+        <p class="section-kicker">Kontakt</p>
+        <h2>Kontakt</h2>
+      </div>
+      <div class="contact-layout">
+        <div class="contact-card reveal">
+          <h3>Ann-Quán Vietnamesisches Restaurant</h3>
+          <p>Zschopauer Straße 253–255</p>
+          <p>09126 Chemnitz</p>
+          <p>Telefon: 0371 54238</p>
+          <div class="contact-actions">
+            <a class="button button-primary" href="tel:+4937154238">Jetzt anrufen</a>
+            <a class="button button-secondary" href="https://www.google.com/maps/dir/?api=1&destination=Zschopauer+Stra%C3%9Fe+253-255%2C+09126+Chemnitz" target="_blank" rel="noreferrer">Route planen</a>
+            <button class="button button-outline" type="button" id="contactWhatsApp">Über WhatsApp kontaktieren</button>
+          </div>
+        </div>
+        <div class="map-panel reveal">
+          <iframe title="Ann-Quán Vietnamesisches Restaurant auf Google Maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2520.8037850936867!2d12.951602699999997!3d50.816274!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a745df5fba4f8b%3A0x59cdceb684e88579!2sAnn%20Quan%20-%20Vietnamesisches%20Restaurant!5e0!3m2!1svi!2s!4v1782015248893!5m2!1svi!2s" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="mobile-actions" aria-label="Schnelle Aktionen">
+    <a href="tel:+4937154238">Anrufen</a>
+    <a href="#reservation">Reservieren</a>
+    <a href="#menu">Bestellen</a>
+  </div>
+
+  <div class="cart-preview-backdrop" id="cartPreviewBackdrop" hidden></div>
+  <aside class="cart-preview-panel" id="cartPreviewPanel" aria-labelledby="cartPreviewTitle" aria-hidden="true" hidden>
+    <div class="cart-preview-head">
+      <div>
+        <p class="section-kicker">Warenkorb</p>
+        <h3 id="cartPreviewTitle">Ausgewählte Gerichte</h3>
+      </div>
+      <button class="cart-preview-close" id="cartPreviewClose" type="button" aria-label="Warenkorb schließen">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
+          <path d="M18 6 6 18" />
+          <path d="m6 6 12 12" />
+        </svg>
+      </button>
+    </div>
+    <div class="cart-preview-items" id="floatingCartItems">
+      <p class="cart-empty">Ihr Warenkorb ist noch leer.</p>
+    </div>
+    <div class="cart-preview-total">
+      <span>Summe</span>
+      <strong id="floatingCartTotal">0,00€</strong>
+    </div>
+    <button class="button button-primary cart-preview-checkout" id="cartPreviewCheckout" type="button" disabled>Bestellung abschließen</button>
+  </aside>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo.jpg" alt="Ann-Quán Logo" loading="lazy" />
+        <p>Ann-Quán Vietnamesisches Restaurant</p>
+      </div>
+      <div>
+        <h3>Adresse</h3>
+        <p>Zschopauer Straße 253–255</p>
+        <p>09126 Chemnitz</p>
+        <p>Telefon: 0371 54238</p>
+      </div>
+      <div>
+        <h3>Öffnungszeiten</h3>
+        <p>Di–Sa: 17:00 – 22:30 Uhr</p>
+        <p>So: 11:00 – 14:00 Uhr und 17:00 – 22:30 Uhr</p>
+      </div>
+      <div>
+        <h3>Navigation</h3>
+        <a href="#home">Startseite</a>
+        <a href="#about">Über uns</a>
+        <a href="#menu">Speisekarte</a>
+        <a href="#cart">Warenkorb</a>
+        <a href="#reservation">Reservierung</a>
+        <a href="#opening">Öffnungszeiten</a>
+        <a href="#contact">Kontakt</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Alle Rechte vorbehalten</p>
+      <p>Design: Hoangcaster</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
