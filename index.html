@@ -20,6 +20,14 @@
       <span></span>
     </div>
   </div>
+  <div class="petal-layer" aria-hidden="true">
+    <span class="petal"></span>
+    <span class="petal"></span>
+    <span class="petal"></span>
+    <span class="petal"></span>
+    <span class="petal"></span>
+    <span class="petal"></span>
+  </div>
   <header class="site-header" id="siteHeader">
     <div class="header-inner">
       <a class="brand" href="#home" aria-label="Ann-Quán Startseite">
@@ -39,14 +47,14 @@
       <nav class="main-nav" id="mainNav" aria-label="Hauptnavigation">
         <a href="#home">Startseite</a>
         <a href="#about">Über uns</a>
-        <a href="#menu">Speisekarte</a>
-        <a href="#cart">Warenkorb</a>
+        <a href="#menu-pdf">Menü-PDF</a>
+        <a href="#online-order">Online bestellen</a>
         <a href="#reservation">Reservierung</a>
         <a href="#opening">Öffnungszeiten</a>
         <a href="#contact">Kontakt</a>
       </nav>
 
-      <a class="button button-primary header-cta" href="#reservation">Jetzt reservieren</a>
+      <a class="button button-primary header-cta" href="#online-order">ONLINE BESTELLEN</a>
       <button class="header-cart-button" id="floatingCartButton" type="button" aria-label="Warenkorb öffnen" aria-controls="cartPreviewPanel" aria-expanded="false">
         <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
           <path d="M6 6h15l-1.5 8.5H8L6 3H3" />
@@ -64,13 +72,19 @@
       <div class="hero-shade"></div>
       <div class="hero-inner">
         <div class="hero-content reveal">
-          <p class="eyebrow">Authentische vietnamesische Küche in Chemnitz</p>
-          <h1><span class="nowrap">Willkommen bei</span> <span class="nowrap">Ann-Quán</span></h1>
-          <p>Entdecken Sie traditionelle vietnamesische Gerichte, frisch zubereitet mit ausgewählten Zutaten und viel Liebe.</p>
+          <img class="hero-logo" src="logo.jpg" alt="Ann-Quán Logo" loading="eager" />
+          <p class="eyebrow">Vietnamesische Küche in Chemnitz</p>
+          <h1><span>Ann-Quán</span> <span>frisch serviert</span></h1>
+          <p>Hausgemachte Phở, Bún und Reisgerichte. Warm, frisch und direkt online bestellbar.</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#reservation">Tisch reservieren</a>
-            <a class="button button-light" href="#menu">Essen bestellen</a>
-            <a class="button button-outline-light" href="#menu">Speisekarte ansehen</a>
+            <a class="button button-primary" href="#online-order">ONLINE BESTELLEN</a>
+            <a class="button button-light" href="#menu-pdf">Menü-PDF ansehen</a>
+            <a class="button button-outline-light" href="#reservation">Jetzt reservieren</a>
+          </div>
+          <div class="hero-ribbon" aria-label="Restaurant Informationen">
+            <span>Phở - Bún - Cơm</span>
+            <span>Zschopauer Straße 253-255</span>
+            <span>Di-Sa 17:00 - 22:30</span>
           </div>
         </div>
         <figure class="hero-plate reveal">
@@ -85,7 +99,7 @@
           <p class="section-kicker">Über Ann-Quán</p>
           <h2>Über Ann-Quán</h2>
           <p>Im Ann-Quán erleben Sie die vielfältigen Aromen der vietnamesischen Küche. Unsere Speisen werden frisch zubereitet und verbinden traditionelle Rezepte mit einem modernen Geschmackserlebnis.</p>
-          <p>Ob ein gemütliches Abendessen, ein Treffen mit Freunden oder eine Bestellung zum Mitnehmen – wir freuen uns darauf, Sie bei uns begrüßen zu dürfen.</p>
+          <p>Ob ein gemütliches Abendessen, ein Treffen mit Freunden oder eine Bestellung zum Mitnehmen: wir freuen uns darauf, Sie bei uns begrüßen zu dürfen.</p>
         </div>
         <figure class="media-panel about-media reveal">
           <img src="Bun Cha Ha Noi.jpg" alt="Bún Chả Hà Nội bei Ann-Quán" loading="lazy" />
@@ -95,17 +109,36 @@
 
     <section class="section specialties-section" id="specialties">
       <div class="section-heading reveal">
-        <p class="section-kicker">Unsere Spezialitäten</p>
-        <h2>Unsere Spezialitäten</h2>
+        <h2>Beliebte Gerichte</h2>
+        <p class="section-intro">Ein schneller Blick auf Gerichte, die Gäste besonders gern bestellen.</p>
       </div>
       <div class="dish-grid" id="specialtyGrid"></div>
     </section>
 
-    <section class="section menu-section" id="menu">
+    <section class="section pdf-menu-section" id="menu-pdf">
       <div class="section-heading reveal">
-        <p class="section-kicker">Unsere Speisekarte</p>
-        <h2>Unsere Speisekarte</h2>
-        <p class="section-intro">Wählen Sie Gerichte aus und senden Sie Ihre Bestellung direkt über WhatsApp.</p>
+        <p class="section-kicker">Speisekarte</p>
+        <h2>Speisekarte ansehen</h2>
+        <p class="section-intro">Öffnen Sie die Menü-Liste mit Kategorien und bestellen Sie direkt daraus.</p>
+      </div>
+      <div class="pdf-menu-panel reveal">
+        <div>
+          <span class="pdf-menu-label">Menü Liste</span>
+          <h3>Ann-Quán Speisekarte</h3>
+          <p>Wählen Sie eine Kategorie, sehen Sie die Gerichte als Liste und legen Sie Ihre Auswahl direkt in den Warenkorb.</p>
+        </div>
+        <div class="pdf-menu-actions">
+          <button class="button button-primary pdf-menu-button" type="button" data-open-menu-list>Zur Menü-Liste wechseln</button>
+          <a class="button button-outline pdf-menu-button" href="menu.html">PDF-Seiten ansehen</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section menu-section online-order-section" id="online-order">
+      <div class="section-heading reveal">
+        <p class="section-kicker">Online bestellen</p>
+        <h2>Online bestellen</h2>
+        <p class="section-intro">Wählen Sie Gerichte aus der Textliste und senden Sie Ihre Bestellung direkt über WhatsApp.</p>
         <div class="menu-pager" id="menuPager" aria-label="Speisekarte Kategorien"></div>
       </div>
       <div class="menu-layout">
@@ -182,12 +215,12 @@
       </div>
       <div class="opening-list reveal" id="openingList">
         <div class="opening-day" data-day="Monday"><span>Montag</span><strong>Geschlossen</strong></div>
-        <div class="opening-day" data-day="Tuesday"><span>Dienstag</span><strong>17:00 – 22:30 Uhr</strong></div>
-        <div class="opening-day" data-day="Wednesday"><span>Mittwoch</span><strong>17:00 – 22:30 Uhr</strong></div>
-        <div class="opening-day" data-day="Thursday"><span>Donnerstag</span><strong>17:00 – 22:30 Uhr</strong></div>
-        <div class="opening-day" data-day="Friday"><span>Freitag</span><strong>17:00 – 22:30 Uhr</strong></div>
-        <div class="opening-day" data-day="Saturday"><span>Samstag</span><strong>17:00 – 22:30 Uhr</strong></div>
-        <div class="opening-day" data-day="Sunday"><span>Sonntag</span><strong>11:00 – 14:00 Uhr und 17:00 – 22:30 Uhr</strong></div>
+        <div class="opening-day" data-day="Tuesday"><span>Dienstag</span><strong>17:00 - 22:30 Uhr</strong></div>
+        <div class="opening-day" data-day="Wednesday"><span>Mittwoch</span><strong>17:00 - 22:30 Uhr</strong></div>
+        <div class="opening-day" data-day="Thursday"><span>Donnerstag</span><strong>17:00 - 22:30 Uhr</strong></div>
+        <div class="opening-day" data-day="Friday"><span>Freitag</span><strong>17:00 - 22:30 Uhr</strong></div>
+        <div class="opening-day" data-day="Saturday"><span>Samstag</span><strong>17:00 - 22:30 Uhr</strong></div>
+        <div class="opening-day" data-day="Sunday"><span>Sonntag</span><strong>11:00 - 14:00 Uhr und 17:00 - 22:30 Uhr</strong></div>
       </div>
       <p class="opening-note reveal">An Feiertagen können die Öffnungszeiten abweichen.</p>
     </section>
@@ -200,7 +233,7 @@
       <div class="contact-layout">
         <div class="contact-card reveal">
           <h3>Ann-Quán Vietnamesisches Restaurant</h3>
-          <p>Zschopauer Straße 253–255</p>
+          <p>Zschopauer Straße 253-255</p>
           <p>09126 Chemnitz</p>
           <p>Telefon: 0371 54238</p>
           <div class="contact-actions">
@@ -218,8 +251,8 @@
 
   <div class="mobile-actions" aria-label="Schnelle Aktionen">
     <a href="tel:+4937154238">Anrufen</a>
-    <a href="#reservation">Reservieren</a>
-    <a href="#menu">Bestellen</a>
+    <a href="#menu-pdf">Menü</a>
+    <a href="#online-order">Bestellen</a>
   </div>
 
   <div class="cart-preview-backdrop" id="cartPreviewBackdrop" hidden></div>
@@ -254,22 +287,22 @@
       </div>
       <div>
         <h3>Adresse</h3>
-        <p>Zschopauer Straße 253–255</p>
+        <p>Zschopauer Straße 253-255</p>
         <p>09126 Chemnitz</p>
         <p>Telefon: 0371 54238</p>
       </div>
       <div>
         <h3>Öffnungszeiten</h3>
-        <p>Di–Sa: 17:00 – 22:30</p>
-        <p>So: 11:00 – 14:00</p>
-        <p>17:00 – 22:30 Uhr</p>
+        <p>Di-Sa: 17:00 - 22:30</p>
+        <p>So: 11:00 - 14:00</p>
+        <p>17:00 - 22:30 Uhr</p>
       </div>
       <div>
         <h3>Navigation</h3>
         <a href="#home">Startseite</a>
         <a href="#about">Über uns</a>
-        <a href="#menu">Speisekarte</a>
-        <a href="#cart">Warenkorb</a>
+        <a href="#menu-pdf">Menü-PDF</a>
+        <a href="#online-order">Online bestellen</a>
         <a href="#reservation">Reservierung</a>
         <a href="#opening">Öffnungszeiten</a>
         <a href="#contact">Kontakt</a>

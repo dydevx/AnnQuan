@@ -81,6 +81,32 @@ const KATEGORIEN = [
   "Dessert",
 ];
 
+const DISH_IMAGE_FOCUS = {
+  "assets/vorspeise.jpg": "50% 76%",
+  "assets/bun-cha.jpg": "50% 52%",
+  "assets/bun-noodles.jpg": "50% 52%",
+  "assets/pho-ga.png": "50% 50%",
+  "assets/pho-soup.jpg": "50% 52%",
+  "assets/pho-xao.jpg": "50% 46%",
+  "assets/mien-ga.jpg": "50% 50%",
+  "assets/com-rice.jpg": "50% 48%",
+  "assets/com-ga.jpg": "45% 55%",
+  "assets/com-vit.jpg": "48% 48%",
+  "assets/dessert.jpg": "50% 50%",
+  "Com Tofu.jpg": "52% 50%",
+  "Com Ga.jpg": "50% 52%",
+  "Com Vit.jpg": "46% 46%",
+  "Com Thit Bo.jpg": "62% 58%",
+  "Com Hai San.jpg": "50% 52%",
+  "Extra Beilage.jpg": "50% 48%",
+  "Nem Gio Re.jpg": "50% 48%",
+  "Nem Ha Noi.jpg": "50% 54%",
+  "Dau Chien Xu.jpg": "50% 50%",
+  "Nom Xoai.jpg": "50% 52%",
+  "Nom Mien Yam Gung.jpg": "50% 52%",
+  "Nom Mien.jpg": "50% 52%",
+};
+
 const MENU_ITEMS = [
   {
     id: "100a",
@@ -88,7 +114,7 @@ const MENU_ITEMS = [
     name: "100. Nem Song - Maishähnchen und Ei",
     description: "Reispapierrollen mit Reisnudeln, Karotten, Gurken, Salat und asiatischen Kräutern.",
     price: "6,50€",
-    image: BILDER.vorspeise,
+    image: LOGO_IMAGE,
   },
   {
     id: "100b",
@@ -96,7 +122,7 @@ const MENU_ITEMS = [
     name: "100. Nem Song - Avocado und Shrimps",
     description: "Reispapierrollen mit Reisnudeln, Karotten, Gurken, Salat und asiatischen Kräutern.",
     price: "7,00€",
-    image: BILDER.vorspeise,
+    image: LOGO_IMAGE,
   },
   {
     id: "100c",
@@ -104,7 +130,7 @@ const MENU_ITEMS = [
     name: "100. Nem Song - Tofu und Ei",
     description: "Reispapierrollen mit Reisnudeln, Karotten, Gurken, Salat und asiatischen Kräutern.",
     price: "6,00€",
-    image: BILDER.vorspeise,
+    image: LOGO_IMAGE,
   },
   {
     id: "101",
@@ -477,11 +503,15 @@ const MENU_ITEMS = [
 ];
 
 function getDishImage(item) {
-  return DISH_IMAGES_BY_NAME[normalizeDishName(item.name)] || LOGO_IMAGE;
+  return DISH_IMAGES_BY_NAME[normalizeDishName(item.name)] || item.image || LOGO_IMAGE;
 }
 
 function getDishImageClass(item) {
   return item.image === LOGO_IMAGE ? "is-logo-image" : "";
+}
+
+function getDishImageFocus(item) {
+  return DISH_IMAGE_FOCUS[item.image] || "50% 50%";
 }
 
 function normalizeDishName(value) {
@@ -495,6 +525,7 @@ function normalizeDishName(value) {
 MENU_ITEMS.forEach((item) => {
   item.image = getDishImage(item);
   item.imageClass = getDishImageClass(item);
+  item.imageFocus = getDishImageFocus(item);
 });
 
 const SPECIALTY_IDS = ["106", "200", "300g", "305e", "501", "703"];
@@ -542,10 +573,13 @@ function getItem(id) {
 function renderMenuCard(item, className = "menu-text-card reveal") {
   return `
     <article class="${className} menu-card-enter">
-      <img class="menu-thumb ${item.imageClass}" src="${item.image}" alt="${item.name}" loading="lazy" onerror="this.onerror=null; this.classList.add('is-logo-image'); this.removeAttribute('style'); this.src='${LOGO_IMAGE}';" />
+      <img class="menu-item-thumb ${item.imageClass}" src="${item.image}" alt="${item.name}" loading="lazy" style="--dish-focus: ${item.imageFocus};" onerror="this.onerror=null; this.classList.add('is-logo-image'); this.src='${LOGO_IMAGE}';" />
       <div class="menu-text-body">
         <div class="menu-text-top">
-          <h4>${item.name}</h4>
+          <div>
+            <span class="menu-item-category">${item.category}</span>
+            <h4>${item.name}</h4>
+          </div>
           <strong>${item.price}</strong>
         </div>
         <p>${item.description}</p>
@@ -559,11 +593,13 @@ function renderMenuCard(item, className = "menu-text-card reveal") {
 }
 
 function renderSpecialties() {
+  if (!specialtyGrid) return;
+
   specialtyGrid.innerHTML = SPECIALTY_IDS.map((id) => {
     const item = getItem(id);
     return `
       <article class="dish-card reveal">
-        <img class="${item.imageClass}" src="${item.image}" alt="${item.name}" loading="lazy" onerror="this.onerror=null; this.classList.add('is-logo-image'); this.removeAttribute('style'); this.src='${LOGO_IMAGE}';" />
+        <img class="${item.imageClass}" src="${item.image}" alt="${item.name}" loading="lazy" style="--dish-focus: ${item.imageFocus};" onerror="this.onerror=null; this.classList.add('is-logo-image'); this.removeAttribute('style'); this.src='${LOGO_IMAGE}';" />
         <div class="dish-body">
           <h3>${item.name}</h3>
           <p>${item.description}</p>
@@ -578,6 +614,8 @@ function renderSpecialties() {
 }
 
 function renderMenuList() {
+  if (!menuList) return;
+
   const category = KATEGORIEN[activeCategoryIndex];
   const items = MENU_ITEMS.filter((item) => item.category === category);
 
@@ -592,12 +630,14 @@ function renderMenuList() {
 }
 
 function renderMenuPager() {
+  if (!menuPager) return;
+
   menuPager.innerHTML = `
-    <button class="menu-page-button" type="button" data-menu-page="prev">Vorherige Kategorie</button>
+    <button class="menu-page-button menu-page-step" type="button" data-menu-page="prev">Zurück</button>
     ${KATEGORIEN.map((category, index) => `
       <button class="menu-page-button ${index === activeCategoryIndex ? "is-active" : ""}" type="button" data-menu-page="${index}" aria-current="${index === activeCategoryIndex ? "page" : "false"}">${category}</button>
     `).join("")}
-    <button class="menu-page-button" type="button" data-menu-page="next">Nächste Kategorie</button>
+    <button class="menu-page-button menu-page-step" type="button" data-menu-page="next">Weiter</button>
   `;
 }
 
@@ -615,10 +655,48 @@ function changeMenuPage(page) {
 }
 
 function initMenuPager() {
+  if (!menuPager) return;
+
   menuPager.addEventListener("click", (event) => {
     const button = event.target.closest("[data-menu-page]");
     if (!button || button.disabled) return;
     changeMenuPage(button.dataset.menuPage);
+  });
+}
+
+function openMenuList() {
+  activeCategoryIndex = 0;
+  renderMenuPager();
+  renderMenuList();
+
+  const orderSection = document.getElementById("online-order");
+  if (!orderSection) return;
+
+  const previousScrollBehavior = document.documentElement.style.scrollBehavior;
+  document.documentElement.style.scrollBehavior = "auto";
+  window.scrollTo({
+    top: orderSection.getBoundingClientRect().top + window.scrollY,
+    behavior: "auto",
+  });
+  window.requestAnimationFrame(() => {
+    document.documentElement.style.scrollBehavior = previousScrollBehavior;
+  });
+
+  if (window.location.hash !== "#online-order") {
+    history.pushState(null, "", "#online-order");
+  }
+  window.setTimeout(() => {
+    menuPager?.querySelector(".menu-page-button.is-active")?.focus({ preventScroll: true });
+  }, 80);
+}
+
+function initMenuListTrigger() {
+  document.body.addEventListener("click", (event) => {
+    const trigger = event.target.closest("[data-open-menu-list]");
+    if (!trigger) return;
+
+    event.preventDefault();
+    openMenuList();
   });
 }
 
@@ -655,7 +733,6 @@ function renderFloatingCart(items, total) {
 
   floatingCartItems.innerHTML = items.map((item) => `
     <div class="cart-preview-line">
-      <img class="${item.imageClass}" src="${item.image}" alt="${item.name}" loading="lazy" onerror="this.onerror=null; this.classList.add('is-logo-image'); this.removeAttribute('style'); this.src='${LOGO_IMAGE}';" />
       <div class="cart-preview-line-body">
         <h4>${item.name}</h4>
         <div class="cart-preview-line-meta">
@@ -942,6 +1019,7 @@ function init() {
   renderMenuList();
   initNavigation();
   initMenuPager();
+  initMenuListTrigger();
   initRevealAnimation();
   highlightCurrentOpeningDay();
   initForms();
