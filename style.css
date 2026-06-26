@@ -4594,3 +4594,85 @@ body::after {
     padding: 0;
   }
 }
+
+.dish-card,
+.dish-card:nth-child(1),
+.dish-card:nth-child(4) {
+  display: flex;
+  min-height: auto;
+}
+
+.dish-card img,
+.dish-card:nth-child(1) img,
+.online-order-section .menu-item-thumb {
+  display: none;
+}
+
+.dish-body {
+  width: 100%;
+  min-height: 0;
+}
+
+.dish-body p,
+.online-order-section .menu-text-body p,
+.online-order-section .menu-item-category {
+  display: none;
+}
+
+.online-order-section .menu-text-card {
+  grid-template-columns: minmax(0, 1fr);
+  min-height: auto;
+}
+
+.online-order-section .menu-text-body {
+  gap: 16px;
+  padding: 18px;
+}
+
+.online-order-section .menu-text-top {
+  align-items: flex-start;
+}
+
+.online-order-section .menu-text-top h4 {
+  font-size: clamp(1.08rem, 2vw, 1.28rem);
+}
+
+.online-order-section .menu-text-top strong,
+.dish-price {
+  font-size: 1.08rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.menu-view-pdf {
+  display: grid;
+  gap: 16px;
+  width: min(960px, 100%);
+  margin: 30px auto 0;
+}
+
+.menu-view-pdf-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.menu-view-pdf-frame {
+  width: 100%;
+  min-height: 82dvh;
+  border: 1px solid rgba(58, 46, 37, 0.14);
+  border-radius: var(--aq-radius);
+  background: #fffaf1;
+  box-shadow: 0 22px 70px rgba(88, 52, 31, 0.12);
+}
+
+@media (max-width: 620px) {
+  .menu-view-pdf-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .menu-view-pdf-frame {
+    min-height: 76dvh;
+  }
+}

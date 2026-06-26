@@ -573,16 +573,13 @@ function getItem(id) {
 function renderMenuCard(item, className = "menu-text-card reveal") {
   return `
     <article class="${className} menu-card-enter">
-      <img class="menu-item-thumb ${item.imageClass}" src="${item.image}" alt="${item.name}" loading="lazy" style="--dish-focus: ${item.imageFocus};" onerror="this.onerror=null; this.classList.add('is-logo-image'); this.src='${LOGO_IMAGE}';" />
       <div class="menu-text-body">
         <div class="menu-text-top">
           <div>
-            <span class="menu-item-category">${item.category}</span>
             <h4>${item.name}</h4>
           </div>
           <strong>${item.price}</strong>
         </div>
-        <p>${item.description}</p>
         <div class="menu-actions">
           <button class="button button-outline" type="button" data-cart-add="${item.id}">In den Warenkorb</button>
           <button class="button button-secondary" type="button" data-direct-order="${item.id}">Direkt bestellen</button>
@@ -599,10 +596,8 @@ function renderSpecialties() {
     const item = getItem(id);
     return `
       <article class="dish-card reveal">
-        <img class="${item.imageClass}" src="${item.image}" alt="${item.name}" loading="lazy" style="--dish-focus: ${item.imageFocus};" onerror="this.onerror=null; this.classList.add('is-logo-image'); this.removeAttribute('style'); this.src='${LOGO_IMAGE}';" />
         <div class="dish-body">
           <h3>${item.name}</h3>
-          <p>${item.description}</p>
           <div class="dish-meta">
             <span class="dish-price">${item.price}</span>
             <button class="button button-outline" type="button" data-cart-add="${item.id}">In den Warenkorb</button>
