@@ -580,6 +580,7 @@ function renderMenuCard(item, className = "menu-text-card reveal") {
           </div>
           <strong>${item.price}</strong>
         </div>
+        <p class="menu-item-description">${item.description}</p>
         <div class="menu-actions">
           <button class="button button-outline" type="button" data-cart-add="${item.id}">In den Warenkorb</button>
           <button class="button button-secondary" type="button" data-direct-order="${item.id}">Direkt bestellen</button>
@@ -598,6 +599,7 @@ function renderSpecialties() {
       <article class="dish-card reveal">
         <div class="dish-body">
           <h3>${item.name}</h3>
+          <p>${item.description}</p>
           <div class="dish-meta">
             <span class="dish-price">${item.price}</span>
             <button class="button button-outline" type="button" data-cart-add="${item.id}">In den Warenkorb</button>

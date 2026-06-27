@@ -4613,10 +4613,21 @@ body::after {
   min-height: 0;
 }
 
-.dish-body p,
-.online-order-section .menu-text-body p,
 .online-order-section .menu-item-category {
   display: none;
+}
+
+.dish-body p,
+.online-order-section .menu-text-body p {
+  display: block;
+  margin: 0;
+  color: rgba(36, 25, 20, 0.68);
+  font-size: 0.94rem;
+  line-height: 1.52;
+}
+
+.online-order-section .menu-text-body p {
+  color: rgba(251, 245, 233, 0.72);
 }
 
 .online-order-section .menu-text-card {
