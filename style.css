@@ -4829,3 +4829,373 @@ body::after {
     min-height: 76dvh;
   }
 }
+
+/* Compact order board */
+.online-order-section {
+  --order-gold: #c59b4d;
+  --order-gold-bright: #dfbf74;
+  --order-gold-deep: #8f6728;
+  --order-gold-soft: rgba(197, 155, 77, 0.12);
+  padding: clamp(64px, 8vw, 104px) 20px;
+  color: var(--aq-ink);
+  background:
+    linear-gradient(180deg, rgba(255, 250, 241, 0.98), rgba(244, 231, 207, 0.96)),
+    var(--aq-paper);
+}
+
+.online-order-section::before {
+  opacity: 0.08;
+}
+
+.online-order-section .section-heading {
+  display: grid;
+  width: min(1120px, 100%);
+  max-width: none;
+  margin: 0 auto 26px;
+  gap: 14px;
+  text-align: left;
+}
+
+.online-order-section .section-heading h2 {
+  max-width: 12ch;
+  margin: 0;
+  color: var(--aq-ink);
+  font-size: clamp(2.25rem, 6vw, 4.2rem);
+  line-height: 0.98;
+}
+
+.online-order-section .section-intro {
+  max-width: 56ch;
+  margin: 0;
+  color: rgba(36, 25, 20, 0.68);
+  font-size: clamp(1rem, 2vw, 1.12rem);
+}
+
+.order-flow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  max-width: 760px;
+  margin-top: 4px;
+}
+
+.order-flow span {
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  color: rgba(36, 25, 20, 0.74);
+  border: 1px solid rgba(58, 46, 37, 0.12);
+  border-radius: 8px;
+  background: rgba(255, 253, 248, 0.72);
+  font-size: 0.92rem;
+  font-weight: 750;
+}
+
+.order-flow strong {
+  display: grid;
+  flex: 0 0 24px;
+  width: 24px;
+  height: 24px;
+  place-items: center;
+  color: var(--aq-ink);
+  border-radius: 999px;
+  background: linear-gradient(180deg, var(--order-gold-bright), var(--order-gold));
+  font-size: 0.78rem;
+}
+
+.online-order-section .menu-pager {
+  display: flex;
+  width: 100%;
+  max-width: 1120px;
+  gap: 8px;
+  align-items: center;
+  margin: 6px 0 0;
+  padding: 8px;
+  overflow-x: auto;
+  border: 1px solid rgba(58, 46, 37, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 253, 248, 0.82);
+  box-shadow: none;
+  scrollbar-width: thin;
+}
+
+.online-order-section .menu-page-button {
+  flex: 0 0 auto;
+  min-height: 38px;
+  padding: 9px 14px;
+  color: rgba(36, 25, 20, 0.78);
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: transparent;
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.online-order-section .menu-page-step {
+  color: var(--order-gold-deep);
+  background: var(--order-gold-soft);
+}
+
+.online-order-section .menu-page-button:hover,
+.online-order-section .menu-page-button:focus-visible {
+  color: var(--aq-ink);
+  border-color: rgba(197, 155, 77, 0.46);
+  background: rgba(255, 250, 241, 0.9);
+}
+
+.online-order-section .menu-page-button.is-active {
+  color: var(--aq-ink);
+  border-color: transparent;
+  background: linear-gradient(180deg, var(--order-gold-bright), var(--order-gold));
+}
+
+.online-order-section .menu-layout {
+  display: grid;
+  width: min(1120px, 100%);
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 380px);
+  gap: 22px;
+  align-items: start;
+  margin: 0 auto;
+}
+
+.online-order-section .menu-category {
+  display: grid;
+  gap: 14px;
+}
+
+.online-order-section .menu-category h3 {
+  margin: 0;
+  color: var(--order-gold-deep);
+  font-size: clamp(1.28rem, 2vw, 1.65rem);
+  line-height: 1.1;
+}
+
+.online-order-section .menu-items {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  grid-auto-rows: 6px;
+}
+
+.online-order-section .menu-text-card {
+  overflow: hidden;
+  border: 1px solid rgba(58, 46, 37, 0.12);
+  border-radius: 8px;
+  background: rgba(255, 253, 248, 0.86);
+  box-shadow: 0 10px 28px rgba(88, 52, 31, 0.08);
+  transition: transform 180ms var(--aq-ease), border-color 180ms var(--aq-ease), box-shadow 180ms var(--aq-ease);
+}
+
+.online-order-section .menu-text-card:hover,
+.online-order-section .menu-text-card:focus-within {
+  transform: translateY(-2px);
+  border-color: rgba(197, 155, 77, 0.46);
+  background: rgba(255, 253, 248, 0.96);
+  box-shadow: 0 16px 36px rgba(88, 52, 31, 0.12);
+}
+
+.online-order-section .menu-text-body {
+  display: grid;
+  gap: 12px;
+  padding: 16px;
+}
+
+.online-order-section .menu-text-top {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: baseline;
+}
+
+.online-order-section .menu-text-top h4 {
+  margin: 0;
+  color: var(--aq-ink);
+  font-size: 1.05rem;
+  line-height: 1.22;
+}
+
+.online-order-section .menu-text-top strong {
+  color: var(--order-gold-deep);
+  font-size: 1rem;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.online-order-section .menu-text-body p {
+  color: rgba(36, 25, 20, 0.68);
+  font-size: 0.92rem;
+  line-height: 1.48;
+}
+
+.online-order-section .menu-actions {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+
+.online-order-section .menu-actions .button {
+  width: 100%;
+  min-height: 40px;
+  justify-content: center;
+  padding: 10px 12px;
+  font-size: 0.86rem;
+}
+
+.online-order-section .menu-actions .button-outline {
+  color: var(--aq-ink);
+  border-color: transparent;
+  background: linear-gradient(180deg, var(--order-gold-bright), var(--order-gold));
+}
+
+.online-order-section .menu-actions .button-outline:hover,
+.online-order-section .menu-actions .button-outline:focus-visible {
+  color: var(--aq-ink);
+  background: linear-gradient(180deg, #e8c982, #b98935);
+}
+
+.online-order-section .menu-actions .button-secondary {
+  color: var(--aq-ink);
+  border-color: rgba(58, 46, 37, 0.14);
+  background: rgba(255, 250, 241, 0.72);
+}
+
+.online-order-section .cart-panel {
+  position: sticky;
+  top: 96px;
+  display: grid;
+  gap: 16px;
+  padding: 18px;
+  border: 1px solid rgba(58, 46, 37, 0.14);
+  border-radius: 8px;
+  background: rgba(255, 253, 248, 0.92);
+  box-shadow: 0 14px 38px rgba(88, 52, 31, 0.12);
+}
+
+.online-order-section .cart-head {
+  display: grid;
+  gap: 3px;
+}
+
+.online-order-section .cart-head h3 {
+  margin: 0;
+  color: var(--aq-ink);
+  font-size: 1.35rem;
+}
+
+.online-order-section .cart-empty {
+  margin: 0;
+  padding: 14px;
+  color: rgba(36, 25, 20, 0.64);
+  border-radius: 8px;
+  background: var(--order-gold-soft);
+}
+
+.online-order-section .cart-line {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: center;
+  padding: 12px 0;
+  border-color: rgba(58, 46, 37, 0.1);
+}
+
+.online-order-section .cart-total {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 14px;
+  color: var(--aq-ink);
+  border-top: 1px solid rgba(58, 46, 37, 0.12);
+  font-size: 1.05rem;
+}
+
+.online-order-section .cart-total strong {
+  color: var(--order-gold-deep);
+}
+
+.online-order-section .cart-form {
+  display: grid;
+  gap: 9px;
+}
+
+.online-order-section .cart-form label {
+  color: rgba(36, 25, 20, 0.72);
+  font-size: 0.78rem;
+  font-weight: 850;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.online-order-section .cart-form input,
+.online-order-section .cart-form textarea {
+  min-height: 42px;
+  color: var(--aq-ink);
+  border: 1px solid rgba(58, 46, 37, 0.14);
+  border-radius: 8px;
+  background: #fffaf1;
+}
+
+.online-order-section .cart-form textarea {
+  min-height: 84px;
+  resize: vertical;
+}
+
+.online-order-section .cart-form .button {
+  margin-top: 4px;
+  min-height: 46px;
+}
+
+.online-order-section .cart-form .button-primary {
+  color: var(--aq-ink);
+  background: linear-gradient(180deg, var(--order-gold-bright), var(--order-gold));
+}
+
+.online-order-section .cart-form .button-primary:hover,
+.online-order-section .cart-form .button-primary:focus-visible {
+  color: var(--aq-ink);
+  background: linear-gradient(180deg, #e8c982, #b98935);
+}
+
+@media (max-width: 980px) {
+  .online-order-section .menu-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .online-order-section .cart-panel {
+    position: static;
+  }
+}
+
+@media (max-width: 720px) {
+  .online-order-section {
+    padding: 54px 14px 72px;
+  }
+
+  .order-flow {
+    grid-template-columns: 1fr;
+  }
+
+  .online-order-section .menu-pager {
+    border-radius: 8px;
+  }
+
+  .online-order-section .menu-page-button {
+    min-height: 40px;
+  }
+
+  .online-order-section .menu-items {
+    grid-template-columns: 1fr;
+  }
+
+  .online-order-section .menu-text-body,
+  .online-order-section .cart-panel {
+    padding: 14px;
+  }
+
+  .online-order-section .menu-text-top {
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+}
