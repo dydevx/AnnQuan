@@ -109,26 +109,10 @@ const DISH_IMAGE_FOCUS = {
 
 const MENU_ITEMS = [
   {
-    id: "100a",
+    id: "100",
     category: "Vorspeise",
-    name: "100. Nem Song - Maishähnchen und Ei",
-    description: "Reispapierrollen mit Reisnudeln, Karotten, Gurken, Salat und asiatischen Kräutern.",
-    price: "6,50€",
-    image: LOGO_IMAGE,
-  },
-  {
-    id: "100b",
-    category: "Vorspeise",
-    name: "100. Nem Song - Avocado und Shrimps",
-    description: "Reispapierrollen mit Reisnudeln, Karotten, Gurken, Salat und asiatischen Kräutern.",
-    price: "7,00€",
-    image: LOGO_IMAGE,
-  },
-  {
-    id: "100c",
-    category: "Vorspeise",
-    name: "100. Nem Song - Tofu und Ei",
-    description: "Reispapierrollen mit Reisnudeln, Karotten, Gurken, Salat und asiatischen Kräutern.",
+    name: "100. Nem Song",
+    description: "Im Reispapier eingewickelte Reisnudeln, Karotten, Gurken, Salat, asiatischen Kräuter serviert mit einer Limetten-Chili-Fischsauce und schwarzem Sesam.",
     price: "6,00€",
     image: LOGO_IMAGE,
   },
@@ -136,7 +120,7 @@ const MENU_ITEMS = [
     id: "101",
     category: "Vorspeise",
     name: "101. Nem Gio Re",
-    description: "Knusprige Reispapierrollen mit Krabben, Shrimps, Glasnudeln, Wurzelgemüse und Morcheln.",
+    description: "Knusprige Reispapierrollen aus geflochtenen Reisnudelfäden mit Krabben-Shrimps-Füllung, Glasnudeln, Wurzelgemüse und Morcheln. Serviert mit Limetten-Chili-Fischsauce.",
     price: "6,50€",
     image: BILDER.vorspeise,
   },
@@ -152,7 +136,7 @@ const MENU_ITEMS = [
     id: "103",
     category: "Vorspeise",
     name: "103. Nom Xoai",
-    description: "Frischer Mangosalat mit Garnelen, Koriander, Minze, Gurken, Karotten und Sesam.",
+    description: "Frischer Mangosalat mit Garnelen, Koriander, Minze, Gurken, Karotten und schwarzem Sesam in einer Limette-Fischsauce-Vinaigrette und das Reiscracker.",
     price: "8,50€",
     image: BILDER.vorspeise,
   },
@@ -168,7 +152,7 @@ const MENU_ITEMS = [
     id: "105",
     category: "Vorspeise",
     name: "105. Nom Mien",
-    description: "Glasnudelsalat mit Maishähnchenstreifen, Kräutern, Gurken, Karotten und Sesam.",
+    description: "Glasnudelsalat mit Maishähnchenstreifen, Koriander, Minze, Gurken, Karotten und schwarzem Sesam in einer Limetten-Fischsauce-Vinaigrette und dazu Reiscracker.",
     price: "8,00€",
     image: BILDER.vorspeise,
   },
@@ -176,7 +160,7 @@ const MENU_ITEMS = [
     id: "106",
     category: "Vorspeise",
     name: "106. Nem Ha Noi",
-    description: "Knusprige hausgemachte Reispapierrollen mit Garnelen-Schweine-Füllung.",
+    description: "Knusprige hausgemachte Reispapierrollen mit einer Garnelen-Schweine-Fullung-Glasnudeln-Wurzelgemüse-Pilzen.",
     price: "7,00€",
     image: BILDER.vorspeise,
   },
@@ -200,7 +184,7 @@ const MENU_ITEMS = [
     id: "200",
     category: "Bún",
     name: "200. Bun Cha Ha Noi",
-    description: "Gegrilltes Schweinefleisch nach nordvietnamesischer Art mit weißem Sesam.",
+    description: "Gegrilltes nach nord - vietnamesischer art, mariniertes Schweinefleisch mit weißem Sesam. Vietnamesische Reisfadennudel mit Gurken, Karotten, frischem Salat und asiatischen Kräutern in einer Limetten Chilli-Fischsauce.",
     price: "15,50€",
     image: BILDER.bun,
   },
@@ -208,15 +192,15 @@ const MENU_ITEMS = [
     id: "201",
     category: "Bún",
     name: "201. Bun Nem",
-    description: "Knusprige Reispapierrollen mit Garnelen-Schweine-Ei-Füllung.",
+    description: "Knusprige Reispapierrollen mit Garnelen-Schweine-Ei-füllung-Glasnudeln-Wurzelgemüse und Pilzen. Vietnamesische Reisfadennudel mit Gurken, Karotten, frischem Salat und asiatischen Kräutern in einer Limetten Chilli-Fischsauce.",
     price: "14,50€",
     image: BILDER.bun,
   },
   {
     id: "202",
     category: "Bún",
-    name: "202. Bun Nem Chay",
-    description: "Vegetarische Reispapierrollen mit Tofu-Ei-Füllung, Glasnudeln und Gemüse.",
+    name: "202. Bun Nem Chay (Vegetarisch)",
+    description: "Knusprige Reispapierrollen mit einer Tofu-Ei-Füllung, Glasnudeln, Wurzelgemüse und Pilzen. Vietnamesische Reisfadennudel mit Gurken, Karotten, frischem Salat und asiatischen Kräutern in einer Limetten Chilli-Fischsauce.",
     price: "14,50€",
     image: BILDER.bun,
   },
@@ -224,7 +208,7 @@ const MENU_ITEMS = [
     id: "203",
     category: "Bún",
     name: "203. Bun Cha La Lot",
-    description: "Schweinehackfleisch in vietnamesischen Pfefferblättern mit Garnelen und Erdnüssen.",
+    description: "In vietnamesischen Pfefferblättern eingewickeltes Schweinehackfleisch mit gehackten Erdnüssen. Vietnamesische Reisfadennudel mit Gurken, Karotten, frischem Salat und asiatischen Kräutern in einer Limetten Chilli-Fischsauce.",
     price: "15,50€",
     image: BILDER.bun,
   },
@@ -232,73 +216,91 @@ const MENU_ITEMS = [
     id: "204",
     category: "Bún",
     name: "204. Bun Bo Nam Bo",
-    description: "Süß-vietnamesisch mariniertes Rindfleisch mit Erdnüssen und asiatischen Kräutern.",
+    description: "Gebratenes, auf süß- vietnamesische Art, mariniertes Rindfleisch mit gehackten Erdnüssen und saisonalen asiatischen Kräutern. Vietnamesische Reisfadennudel mit Gurken, Karotten, frischem Salat und asiatischen Kräutern in einer Limetten Chilli-Fischsauce.",
     price: "16,50€",
     image: BILDER.bun,
   },
   {
     id: "205",
     category: "Bún",
-    name: "205. Bun Dau Chien Xu",
-    description: "Veganer knusprig gebackener Seidentofu mit schwarzem Sesam.",
+    name: "205. Bun Dau Chien Xu (Vegan)",
+    description: "Knuspriger gebackener Seidentofu mit schwarzem Sesam. Vietnamesische Reisfadennudel mit Gurken, Karotten, frischem Salat und asiatischen Kräutern in einer Limetten Chilli-Fischsauce.",
     price: "13,50€",
     image: BILDER.bun,
   },
   {
-    id: "300k",
+    id: "300",
     category: "Phở",
-    name: "300. Pho Ga Klein",
-    description: "Reisbandnudelsuppe mit zarter Maishähnchenbrust.",
+    name: "300. Pho Ga",
+    description: "Mit zarter Maishähnchenbrust. Traditionell Vietnamesische Reisbandnudelsuppen mit 8 Stunden gekochter knochenbrühe und ver. Gemüse (Frühlingszwiebeln, Koriander, Lauchzwiebeln und Minze).",
     price: "8,00€",
     image: BILDER.pho,
+    optionGroups: [
+      {
+        id: "size",
+        title: "Wähle deine Größe",
+        required: true,
+        options: [
+          { id: "klein", label: "Klein", priceDelta: 0 },
+          { id: "gross", label: "Groß", priceDelta: 6.5 },
+        ],
+      },
+    ],
   },
   {
-    id: "300g",
+    id: "301",
     category: "Phở",
-    name: "300. Pho Ga Groß",
-    description: "Reisbandnudelsuppe mit zarter Maishähnchenbrust.",
-    price: "14,50€",
+    name: "301. Pho Bo Classic",
+    description: "Mit saftigem Rindfleisch oder kurz angebratenem in medium rare. Traditionell Vietnamesische Reisbandnudelsuppen mit 8 Stunden gekochter knochenbrühe und ver. Gemüse (Frühlingszwiebeln, Koriander, Lauchzwiebeln und Minze).",
+    price: "9,90€",
     image: BILDER.pho,
-  },
-  {
-    id: "301k",
-    category: "Phở",
-    name: "301. Pho Bo Classic Klein",
-    description: "Reisbandnudelsuppe mit saftigem Rindfleisch oder medium rare angebraten.",
-    price: "8,00€",
-    image: BILDER.pho,
-  },
-  {
-    id: "301g",
-    category: "Phở",
-    name: "301. Pho Bo Classic Groß",
-    description: "Reisbandnudelsuppe mit saftigem Rindfleisch oder medium rare angebraten.",
-    price: "16,00€",
-    image: BILDER.pho,
+    optionGroups: [
+      {
+        id: "size",
+        title: "Wähle deine Größe",
+        required: true,
+        options: [
+          { id: "klein", label: "Klein", priceDelta: 0 },
+          { id: "gross", label: "Groß", priceDelta: 8 },
+        ],
+      },
+    ],
   },
   {
     id: "302",
     category: "Phở",
     name: "302. Pho Bo Premium",
-    description: "Rindfleisch von Ribs und geschmorte Rinderrippenknochen.",
+    description: "Mit dünn gekochtem Rindfleisch von Ribs und 4 Stunden geschmorter Rinderrippenknochen, saftig und von der knochenstruktur Fallend. Traditionell Vietnamesische Reisbandnudelsuppen mit 8 Stunden gekochter knochenbrühe und ver. Gemüse (Frühlingszwiebeln, Koriander, Lauchzwiebeln und Minze).",
     price: "20,00€",
     image: BILDER.pho,
   },
   {
-    id: "303k",
+    id: "303",
     category: "Phở",
-    name: "303. Pho Sot Vang Klein",
-    description: "Vietnamesisches Rindergulasch mit Tomaten, Kräutern und Rotwein.",
+    name: "303. Pho Sot Vang",
+    description: "Vietnamesisches Gulasch vom Rindfleisch mit Tomaten, asiatischen Kräutern, verfeinert mit Rotwein, wahlweise mit Reis oder Reisnudeln. Traditionell vietnamesische Reisbandnudelsuppen mit 8 Stunden gekocht Knochenbrühe und ver. Gemüse (frühlingszwiebeln, Koriander, lauchzwiebeln und Minze).",
     price: "9,00€",
     image: BILDER.pho,
-  },
-  {
-    id: "303g",
-    category: "Phở",
-    name: "303. Pho Sot Vang Groß",
-    description: "Vietnamesisches Rindergulasch mit Tomaten, Kräutern und Rotwein.",
-    price: "15,50€",
-    image: BILDER.pho,
+    optionGroups: [
+      {
+        id: "size",
+        title: "Wähle deine Größe",
+        required: true,
+        options: [
+          { id: "klein", label: "Klein", priceDelta: 0 },
+          { id: "gross", label: "Groß", priceDelta: 6.5 },
+        ],
+      },
+      {
+        id: "side",
+        title: "Deine Wahl",
+        required: true,
+        options: [
+          { id: "reis", label: "Reis", priceDelta: 0 },
+          { id: "reisnudeln", label: "Reisnudeln", priceDelta: 0 },
+        ],
+      },
+    ],
   },
   {
     id: "304k",
@@ -517,6 +519,7 @@ function getDishImageFocus(item) {
 function normalizeDishName(value) {
   return value
     .replace(/^\d+\.\s*/, "")
+    .replace(/\s*\([^)]*\)\s*$/, "")
     .normalize("NFC")
     .trim()
     .toLowerCase();
@@ -528,7 +531,7 @@ MENU_ITEMS.forEach((item) => {
   item.imageFocus = getDishImageFocus(item);
 });
 
-const SPECIALTY_IDS = ["106", "200", "300g", "305e", "501", "703"];
+const SPECIALTY_IDS = ["106", "200", "300", "305e", "501", "703"];
 const cart = {};
 
 const specialtyGrid = document.getElementById("specialtyGrid");
@@ -547,6 +550,7 @@ const cartPreviewBackdrop = document.getElementById("cartPreviewBackdrop");
 const cartPreviewClose = document.getElementById("cartPreviewClose");
 const cartPreviewCheckout = document.getElementById("cartPreviewCheckout");
 let activeCategoryIndex = 0;
+let menuMasonryFrame = 0;
 
 function whatsappUrl(message) {
   const target = WHATSAPP_NUMMER.trim();
@@ -570,17 +574,140 @@ function getItem(id) {
   return MENU_ITEMS.find((item) => item.id === id);
 }
 
+function getItemOptionGroups(item) {
+  return item.optionGroups || [];
+}
+
+function getOptionPriceLabel(option) {
+  if (!option.priceDelta) return "";
+  return `+${formatPrice(option.priceDelta)}`;
+}
+
+function renderMenuOptions(item) {
+  const groups = getItemOptionGroups(item);
+  if (!groups.length) return "";
+
+  return `
+    <div class="menu-option-groups" data-option-groups>
+      ${groups.map((group) => `
+        <fieldset class="menu-option-group" data-option-group="${group.id}">
+          <legend>
+            <span>${group.title}</span>
+            ${group.required ? `<em>Pflicht</em>` : ""}
+          </legend>
+          <p class="menu-option-hint">1 auswählen</p>
+          <div class="menu-option-list">
+            ${group.options.map((option) => `
+              <label class="menu-option-row">
+                <span>
+                  <strong>${option.label}</strong>
+                  ${option.priceDelta ? `<small>${getOptionPriceLabel(option)}</small>` : ""}
+                </span>
+                <input type="radio" name="option-${item.id}-${group.id}" value="${option.id}" data-option-input data-option-group-id="${group.id}" data-option-price="${option.priceDelta || 0}" />
+              </label>
+            `).join("")}
+          </div>
+          <p class="menu-option-error">Bitte wählen Sie eine Option aus.</p>
+        </fieldset>
+      `).join("")}
+    </div>
+  `;
+}
+
+function getSelectedOptionState(item, trigger) {
+  const groups = getItemOptionGroups(item);
+  if (!groups.length) {
+    return {
+      isValid: true,
+      cartId: item.id,
+      options: [],
+      price: item.price,
+    };
+  }
+
+  const card = trigger?.closest(`[data-menu-item-id="${item.id}"]`);
+  const selections = [];
+  let total = parsePrice(item.price);
+  let isValid = true;
+
+  groups.forEach((group) => {
+    const groupElement = card?.querySelector(`[data-option-group="${group.id}"]`);
+    groupElement?.classList.remove("has-error");
+
+    const selectedInput = card?.querySelector(`input[name="option-${item.id}-${group.id}"]:checked`);
+    const selectedOption = group.options.find((option) => option.id === selectedInput?.value);
+
+    if (group.required && !selectedOption) {
+      isValid = false;
+      groupElement?.classList.add("has-error");
+      return;
+    }
+
+    if (!selectedOption) return;
+
+    const priceDelta = Number(selectedOption.priceDelta || 0);
+    total += priceDelta;
+    selections.push({
+      groupId: group.id,
+      groupLabel: group.title,
+      optionId: selectedOption.id,
+      optionLabel: selectedOption.label,
+      priceDelta,
+    });
+  });
+
+  if (!isValid) {
+    card?.querySelector(".menu-option-group.has-error input")?.focus();
+    scheduleMenuMasonry();
+  }
+
+  return {
+    isValid,
+    cartId: [item.id, ...selections.map((selection) => `${selection.groupId}-${selection.optionId}`)].join("__"),
+    options: selections,
+    price: formatPrice(total),
+  };
+}
+
+function updateMenuCardPrice(card) {
+  if (!card) return;
+
+  const item = getItem(card.dataset.menuItemId);
+  const priceElement = card.querySelector("[data-item-price]");
+  if (!item || !priceElement) return;
+
+  const total = getItemOptionGroups(item).reduce((sum, group) => {
+    const selectedInput = card.querySelector(`input[name="option-${item.id}-${group.id}"]:checked`);
+    return sum + Number(selectedInput?.dataset.optionPrice || 0);
+  }, parsePrice(item.price));
+
+  priceElement.textContent = formatPrice(total);
+}
+
+function renderCartOptionText(item) {
+  if (!item.options?.length) return "";
+  return `<p class="cart-option-text">${item.options.map((option) => `${option.groupLabel}: ${option.optionLabel}`).join(" · ")}</p>`;
+}
+
+function buildOrderLine(item) {
+  const options = item.options?.length
+    ? ` | ${item.options.map((option) => `${option.groupLabel}: ${option.optionLabel}`).join(", ")}`
+    : "";
+  return `- ${item.quantity}× ${item.name}${options} (${item.price})`;
+}
+
 function renderMenuCard(item, className = "menu-text-card reveal") {
   return `
-    <article class="${className} menu-card-enter">
+    <article class="${className} menu-card-enter" data-menu-item-id="${item.id}">
       <div class="menu-text-body">
         <div class="menu-text-top">
           <div>
             <h4>${item.name}</h4>
           </div>
-          <strong>${item.price}</strong>
+          <strong data-item-price>${item.price}</strong>
         </div>
         <p class="menu-item-description">${item.description}</p>
+        ${renderMenuOptions(item)}
         <div class="menu-actions">
           <button class="button button-outline" type="button" data-cart-add="${item.id}">In den Warenkorb</button>
           <button class="button button-secondary" type="button" data-direct-order="${item.id}">Direkt bestellen</button>
@@ -595,6 +722,7 @@ function renderSpecialties() {
 
   specialtyGrid.innerHTML = SPECIALTY_IDS.map((id) => {
     const item = getItem(id);
+    const hasOptions = getItemOptionGroups(item).length > 0;
     return `
       <article class="dish-card reveal">
         <div class="dish-body">
@@ -602,7 +730,7 @@ function renderSpecialties() {
           <p>${item.description}</p>
           <div class="dish-meta">
             <span class="dish-price">${item.price}</span>
-            <button class="button button-outline" type="button" data-cart-add="${item.id}">In den Warenkorb</button>
+            <button class="button button-outline" type="button" ${hasOptions ? `data-menu-select="${item.id}"` : `data-cart-add="${item.id}"`}>${hasOptions ? "Optionen wählen" : "In den Warenkorb"}</button>
           </div>
         </div>
       </article>
@@ -624,6 +752,40 @@ function renderMenuList() {
       </div>
     </section>
   `;
+  scheduleMenuMasonry();
+}
+
+function applyMenuMasonry() {
+  if (!menuList) return;
+
+  menuList.querySelectorAll(".menu-items").forEach((grid) => {
+    const cards = Array.from(grid.querySelectorAll(".menu-text-card"));
+    const styles = window.getComputedStyle(grid);
+
+    cards.forEach((card) => {
+      card.style.removeProperty("--menu-card-rows");
+    });
+
+    const rowHeight = Number.parseFloat(styles.gridAutoRows) || 8;
+    const rowGap = Number.parseFloat(styles.rowGap) || 0;
+
+    cards.forEach((card) => {
+      const height = card.getBoundingClientRect().height;
+      const rows = Math.max(1, Math.ceil((height + rowGap) / (rowHeight + rowGap)));
+      card.style.setProperty("--menu-card-rows", rows);
+    });
+  });
+}
+
+function scheduleMenuMasonry() {
+  if (menuMasonryFrame) {
+    window.cancelAnimationFrame(menuMasonryFrame);
+  }
+
+  menuMasonryFrame = window.requestAnimationFrame(() => {
+    menuMasonryFrame = 0;
+    applyMenuMasonry();
+  });
 }
 
 function renderMenuPager() {
@@ -732,6 +894,7 @@ function renderFloatingCart(items, total) {
     <div class="cart-preview-line">
       <div class="cart-preview-line-body">
         <h4>${item.name}</h4>
+        ${renderCartOptionText(item)}
         <div class="cart-preview-line-meta">
           <p>${item.price} × ${item.quantity}</p>
           <div class="cart-qty">
@@ -765,6 +928,7 @@ function updateCart() {
     line.innerHTML = `
       <div>
         <p><strong>${item.name}</strong></p>
+        ${renderCartOptionText(item)}
         <p>${item.price} × ${item.quantity}</p>
       </div>
       <div class="cart-qty">
@@ -780,14 +944,23 @@ function updateCart() {
   cartSubmit.disabled = false;
 }
 
-function addToCart(id) {
+function addToCart(id, trigger) {
   const item = getItem(id);
   if (!item) return;
+  const selectedState = getSelectedOptionState(item, trigger);
+  if (!selectedState.isValid) return;
 
-  if (!cart[id]) {
-    cart[id] = { ...item, quantity: 1 };
+  if (!cart[selectedState.cartId]) {
+    cart[selectedState.cartId] = {
+      ...item,
+      id: selectedState.cartId,
+      itemId: item.id,
+      options: selectedState.options,
+      price: selectedState.price,
+      quantity: 1,
+    };
   } else {
-    cart[id].quantity += 1;
+    cart[selectedState.cartId].quantity += 1;
   }
 
   updateCart();
@@ -809,30 +982,56 @@ function changeCartQuantity(id, direction) {
 }
 
 function buildOrderLines() {
-  return Object.values(cart).map((item) => `- ${item.quantity}× ${item.name} (${item.price})`);
+  return Object.values(cart).map((item) => buildOrderLine(item));
 }
 
 function initCartActions() {
   document.body.addEventListener("click", (event) => {
+    const menuSelectButton = event.target.closest("[data-menu-select]");
     const addButton = event.target.closest("[data-cart-add]");
     const directButton = event.target.closest("[data-direct-order]");
     const plusButton = event.target.closest("[data-cart-plus]");
     const minusButton = event.target.closest("[data-cart-minus]");
 
+    if (menuSelectButton) {
+      const item = getItem(menuSelectButton.dataset.menuSelect);
+      if (!item) return;
+
+      activeCategoryIndex = Math.max(0, KATEGORIEN.indexOf(item.category));
+      renderMenuPager();
+      renderMenuList();
+      document.getElementById("online-order")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      window.setTimeout(() => {
+        const card = document.querySelector(`[data-menu-item-id="${item.id}"]`);
+        card?.classList.add("is-attention");
+        card?.scrollIntoView({ behavior: "smooth", block: "center" });
+        window.setTimeout(() => card?.classList.remove("is-attention"), 1200);
+      }, 120);
+      return;
+    }
+
     if (addButton) {
-      addToCart(addButton.dataset.cartAdd);
+      addToCart(addButton.dataset.cartAdd, addButton);
       return;
     }
 
     if (directButton) {
       const item = getItem(directButton.dataset.directOrder);
       if (!item) return;
+      const selectedState = getSelectedOptionState(item, directButton);
+      if (!selectedState.isValid) return;
+      const directItem = {
+        ...item,
+        options: selectedState.options,
+        price: selectedState.price,
+        quantity: 1,
+      };
       openWhatsApp(`Hallo Ann-Quán,
 
 ich möchte gerne Essen zum Mitnehmen bestellen.
 
 Bestellung:
-- 1× ${item.name} (${item.price})
+${buildOrderLine(directItem)}
 
 Anmerkung: -`);
       return;
@@ -846,6 +1045,16 @@ Anmerkung: -`);
     if (minusButton) {
       changeCartQuantity(minusButton.dataset.cartMinus, -1);
     }
+  });
+
+  document.body.addEventListener("change", (event) => {
+    const input = event.target.closest("[data-option-input]");
+    if (!input) return;
+
+    const card = input.closest("[data-menu-item-id]");
+    input.closest(".menu-option-group")?.classList.remove("has-error");
+    updateMenuCardPrice(card);
+    scheduleMenuMasonry();
   });
 
   cartForm.addEventListener("submit", (event) => {
@@ -1014,6 +1223,8 @@ function init() {
   renderSpecialties();
   renderMenuPager();
   renderMenuList();
+  window.addEventListener("resize", scheduleMenuMasonry);
+  window.addEventListener("load", scheduleMenuMasonry);
   initNavigation();
   initMenuPager();
   initMenuListTrigger();
