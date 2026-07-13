@@ -5199,3 +5199,621 @@ body::after {
     gap: 5px;
   }
 }
+
+/* Beer actions use the same primary action language as the rest of the menu. */
+.online-order-section .alcohol-add-button,
+.online-order-section .alcohol-add-button.button-outline {
+  display: inline-flex;
+  flex: 0 0 auto;
+  width: auto;
+  min-width: 132px;
+  height: auto;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  border: 0;
+  border-radius: 999px;
+  color: var(--aq-ink);
+  background: linear-gradient(180deg, var(--order-gold-bright), var(--order-gold));
+  box-shadow: none;
+  font-size: 0.88rem;
+  font-weight: 800;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.online-order-section .alcohol-add-button:hover,
+.online-order-section .alcohol-add-button:focus-visible,
+.online-order-section .alcohol-add-button.button-outline:hover,
+.online-order-section .alcohol-add-button.button-outline:focus-visible {
+  color: var(--aq-ink);
+  background: linear-gradient(180deg, #e8c982, #b98935);
+  transform: translateY(-1px);
+}
+
+.online-order-section .alcohol-add-button:focus-visible {
+  outline: 3px solid rgba(112, 69, 30, 0.3);
+  outline-offset: 3px;
+}
+
+.online-order-section .alcohol-add-button:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 520px) {
+  .online-order-section .alcohol-menu-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .online-order-section .alcohol-add-button,
+  .online-order-section .alcohol-add-button.button-outline {
+    width: 100%;
+  }
+}
+
+/* Alcohol menu: compact ordering rows inspired by a printed drinks list. */
+.online-order-section .menu-items:has(.alcohol-menu-row) {
+  grid-template-columns: 1fr;
+  grid-auto-rows: auto;
+  gap: 0;
+  border-top: 1px solid rgba(58, 46, 37, 0.12);
+}
+
+.online-order-section .alcohol-menu-row {
+  display: flex;
+  grid-column: 1 / -1;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(18px, 4vw, 44px);
+  min-height: 150px;
+  padding: clamp(22px, 3vw, 34px) clamp(18px, 3vw, 30px);
+  overflow: visible;
+  border: 0;
+  border-bottom: 1px solid rgba(58, 46, 37, 0.12);
+  border-radius: 0;
+  background: rgba(255, 253, 248, 0.72);
+  box-shadow: none;
+}
+
+.online-order-section .alcohol-menu-row:hover,
+.online-order-section .alcohol-menu-row:focus-within {
+  transform: none;
+  border-color: rgba(58, 46, 37, 0.18);
+  background: rgba(255, 253, 248, 0.98);
+  box-shadow: none;
+}
+
+.alcohol-menu-content {
+  min-width: 0;
+}
+
+.online-order-section .alcohol-menu-content h4 {
+  margin: 0 0 9px;
+  color: var(--aq-ink);
+  font-size: clamp(1.08rem, 2.1vw, 1.45rem);
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+.online-order-section .alcohol-menu-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px 8px;
+  margin: 0;
+  color: rgba(36, 25, 20, 0.58);
+  font-size: clamp(0.9rem, 1.7vw, 1.05rem);
+  line-height: 1.45;
+  font-variant-numeric: tabular-nums;
+}
+
+.online-order-section .alcohol-menu-meta strong {
+  color: var(--aq-ink);
+  font-weight: 750;
+}
+
+.online-order-section .alcohol-menu-volume {
+  margin: 7px 0 0;
+  color: rgba(36, 25, 20, 0.72);
+  font-size: 0.98rem;
+  line-height: 1.4;
+}
+
+.online-order-section .alcohol-menu-note {
+  margin: 4px 0 0;
+  color: rgba(36, 25, 20, 0.62);
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
+.alcohol-add-button {
+  display: inline-grid;
+  flex: 0 0 auto;
+  width: 54px;
+  height: 54px;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  color: var(--aq-ink);
+  background: var(--order-gold-bright);
+  box-shadow: 0 5px 8px rgba(88, 52, 31, 0.16);
+  cursor: pointer;
+  transition: transform 160ms var(--aq-ease), background-color 160ms var(--aq-ease);
+}
+
+.alcohol-add-button span {
+  display: block;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1;
+  transform: translateY(-1px);
+}
+
+.alcohol-add-button:hover,
+.alcohol-add-button:focus-visible {
+  background: var(--order-gold);
+  transform: translateY(-2px);
+}
+
+.alcohol-add-button:focus-visible {
+  outline: 3px solid rgba(112, 69, 30, 0.34);
+  outline-offset: 3px;
+}
+
+.alcohol-add-button:active {
+  transform: scale(0.96);
+}
+
+@media (max-width: 720px) {
+  .online-order-section .alcohol-menu-row {
+    min-height: 132px;
+    padding: 20px 14px;
+  }
+
+  .alcohol-add-button {
+    width: 48px;
+    height: 48px;
+  }
+
+  .online-order-section .alcohol-menu-note {
+    max-width: 34ch;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .alcohol-add-button {
+    transition: none;
+  }
+}
+
+/* Unified order-menu system: food cards, option rows and compact drinks. */
+.online-order-section .menu-category {
+  gap: 18px;
+}
+
+.online-order-section .menu-category-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 0 2px 12px;
+  border-bottom: 1px solid rgba(58, 46, 37, 0.13);
+}
+
+.online-order-section .menu-category-heading h3 {
+  margin: 0;
+  color: var(--aq-ink);
+  font-size: clamp(1.45rem, 2.8vw, 2rem);
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+.online-order-section .menu-category-heading p {
+  margin: 0;
+  color: rgba(36, 25, 20, 0.58);
+  font-size: 0.82rem;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.online-order-section [data-menu-kind="food"] .menu-items {
+  gap: 16px;
+}
+
+.online-order-section [data-menu-kind="food"] .menu-text-card {
+  border: 1px solid rgba(58, 46, 37, 0.13);
+  border-radius: 12px;
+  background: #fffdf9;
+  box-shadow: 0 4px 8px rgba(88, 52, 31, 0.06);
+}
+
+.online-order-section [data-menu-kind="food"] .menu-text-card:hover,
+.online-order-section [data-menu-kind="food"] .menu-text-card:focus-within {
+  transform: translateY(-2px);
+  border-color: rgba(139, 45, 40, 0.32);
+  background: #fffdf9;
+  box-shadow: 0 5px 8px rgba(88, 52, 31, 0.1);
+}
+
+.online-order-section [data-menu-kind="food"] .menu-text-body {
+  gap: 15px;
+  padding: clamp(17px, 2.4vw, 22px);
+}
+
+.online-order-section [data-menu-kind="food"] .menu-text-top {
+  align-items: start;
+}
+
+.online-order-section [data-menu-kind="food"] .menu-text-top h4 {
+  color: var(--aq-ink);
+  font-size: clamp(1.04rem, 1.8vw, 1.18rem);
+  line-height: 1.28;
+  letter-spacing: -0.012em;
+  text-wrap: pretty;
+}
+
+.online-order-section .menu-choice-summary {
+  margin: 5px 0 0;
+  color: var(--aq-red);
+  font-size: 0.76rem;
+  font-weight: 750;
+  line-height: 1.3;
+}
+
+.online-order-section [data-menu-kind="food"] .menu-text-top > strong {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+  color: var(--aq-red);
+  font-size: 1.08rem;
+  line-height: 1.2;
+}
+
+.online-order-section .menu-text-top > strong small {
+  color: rgba(36, 25, 20, 0.56);
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.online-order-section [data-menu-kind="food"] .menu-item-description {
+  margin: 0;
+  color: rgba(36, 25, 20, 0.7);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+
+.online-order-section [data-menu-kind="food"] .menu-option-groups {
+  gap: 17px;
+  padding-top: 3px;
+}
+
+.online-order-section [data-menu-kind="food"] .menu-option-group {
+  gap: 7px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.online-order-section [data-menu-kind="food"] .menu-option-group legend {
+  padding-top: 14px;
+  border-top: 1px solid rgba(58, 46, 37, 0.11);
+  font-size: 0.94rem;
+}
+
+.online-order-section [data-menu-kind="food"] .menu-option-group legend em {
+  padding: 3px 7px;
+  border: 1px solid rgba(139, 45, 40, 0.18);
+  border-radius: 999px;
+  background: transparent;
+  font-size: 0.66rem;
+}
+
+.online-order-section [data-menu-kind="food"] .menu-option-hint {
+  color: rgba(36, 25, 20, 0.54);
+  font-size: 0.76rem;
+}
+
+.online-order-section [data-menu-kind="food"] .menu-option-list {
+  gap: 3px;
+}
+
+.online-order-section [data-menu-kind="food"] .menu-option-row {
+  min-height: 46px;
+  padding: 9px 10px;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 150ms var(--aq-ease);
+}
+
+.online-order-section [data-menu-kind="food"] .menu-option-row:hover {
+  background: rgba(197, 155, 77, 0.09);
+}
+
+.online-order-section [data-menu-kind="food"] .menu-option-row:has(input:checked) {
+  color: var(--aq-ink);
+  background: rgba(197, 155, 77, 0.16);
+}
+
+.online-order-section [data-menu-kind="food"] .menu-option-row input {
+  width: 20px;
+  height: 20px;
+}
+
+.online-order-section [data-menu-kind="food"] .menu-actions {
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: 9px;
+  padding-top: 3px;
+}
+
+.online-order-section [data-menu-kind="food"] .menu-actions .button {
+  min-height: 44px;
+  border-radius: 8px;
+  font-weight: 800;
+}
+
+.online-order-section [data-menu-kind="drinks"] .menu-items {
+  grid-template-columns: 1fr;
+  gap: 0;
+  grid-auto-rows: auto;
+  border-top: 1px solid rgba(58, 46, 37, 0.11);
+}
+
+.online-order-section .homemade-drink-row {
+  grid-column: 1 / -1;
+  grid-row-end: auto;
+  border: 0;
+  border-bottom: 1px solid rgba(58, 46, 37, 0.11);
+  border-radius: 0;
+  background: rgba(255, 253, 248, 0.68);
+  box-shadow: none;
+}
+
+.online-order-section .alcohol-menu-row {
+  grid-row-end: auto;
+}
+
+.online-order-section .homemade-drink-row:hover,
+.online-order-section .homemade-drink-row:focus-within {
+  transform: none;
+  border-color: rgba(58, 46, 37, 0.16);
+  background: #fffdf9;
+  box-shadow: none;
+}
+
+.online-order-section .homemade-drink-row .menu-text-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 6px 18px;
+  align-items: center;
+  padding: 18px 16px;
+}
+
+.online-order-section .homemade-drink-row .menu-text-top,
+.online-order-section .homemade-drink-row .menu-actions {
+  display: contents;
+}
+
+.online-order-section .homemade-drink-row .menu-text-top h4 {
+  color: var(--aq-ink);
+  font-size: 1.04rem;
+}
+
+.online-order-section .homemade-drink-row .menu-text-top > strong {
+  grid-column: 2;
+  grid-row: 1;
+  color: var(--aq-red);
+}
+
+.online-order-section .homemade-drink-row .menu-item-description {
+  grid-column: 1;
+  margin: 0;
+  color: rgba(36, 25, 20, 0.62);
+  font-size: 0.84rem;
+}
+
+.online-order-section .homemade-drink-row .menu-actions .button-outline {
+  grid-column: 2;
+  grid-row: 2;
+  width: auto;
+  min-width: 112px;
+  min-height: 40px;
+}
+
+.online-order-section .homemade-drink-row .menu-actions .button-secondary {
+  display: none;
+}
+
+@media (max-width: 720px) {
+  .online-order-section .menu-category-heading {
+    align-items: center;
+  }
+
+  .online-order-section [data-menu-kind="food"] .menu-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .online-order-section .homemade-drink-row .menu-text-body {
+    grid-template-columns: minmax(0, 1fr) auto;
+    padding: 16px 12px;
+  }
+
+  .online-order-section .homemade-drink-row .menu-actions .button-outline {
+    min-width: 96px;
+    padding-inline: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .online-order-section [data-menu-kind="food"] .menu-text-card,
+  .online-order-section [data-menu-kind="food"] .menu-option-row {
+    transition: none;
+  }
+}
+
+/* Cohesion pass: one continuous menu rhythm across every category. */
+.online-order-section .menu-category {
+  --menu-space-xs: 8px;
+  --menu-space-sm: 12px;
+  --menu-space-md: 16px;
+  --menu-space-lg: 24px;
+}
+
+.online-order-section .menu-category .menu-items,
+.online-order-section [data-menu-kind="food"] .menu-items,
+.online-order-section [data-menu-kind="drinks"] .menu-items,
+.online-order-section .menu-items:has(.alcohol-menu-row) {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: auto;
+  gap: 0;
+  overflow: hidden;
+  border: 1px solid rgba(58, 46, 37, 0.13);
+  border-radius: 12px;
+  background: rgba(255, 253, 248, 0.82);
+}
+
+.online-order-section .menu-category .menu-text-card,
+.online-order-section [data-menu-kind="food"] .menu-text-card,
+.online-order-section .homemade-drink-row,
+.online-order-section .alcohol-menu-row {
+  display: block;
+  grid-column: 1;
+  grid-row-end: auto;
+  min-height: 0;
+  overflow: visible;
+  border: 0;
+  border-bottom: 1px solid rgba(58, 46, 37, 0.11);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  transform: none;
+}
+
+.online-order-section .menu-category .menu-text-card:last-child,
+.online-order-section .alcohol-menu-row:last-child {
+  border-bottom: 0;
+}
+
+.online-order-section .menu-category .menu-text-card:hover,
+.online-order-section .menu-category .menu-text-card:focus-within,
+.online-order-section [data-menu-kind="food"] .menu-text-card:hover,
+.online-order-section [data-menu-kind="food"] .menu-text-card:focus-within,
+.online-order-section .homemade-drink-row:hover,
+.online-order-section .homemade-drink-row:focus-within,
+.online-order-section .alcohol-menu-row:hover,
+.online-order-section .alcohol-menu-row:focus-within {
+  border-color: rgba(58, 46, 37, 0.11);
+  background: rgba(197, 155, 77, 0.065);
+  box-shadow: none;
+  transform: none;
+}
+
+.online-order-section .menu-category .menu-text-body,
+.online-order-section [data-menu-kind="food"] .menu-text-body {
+  gap: var(--menu-space-sm);
+  padding: var(--menu-space-lg);
+}
+
+.online-order-section [data-menu-kind="food"] .menu-text-top {
+  gap: var(--menu-space-md);
+}
+
+.online-order-section [data-menu-kind="food"] .menu-item-description {
+  max-width: 68ch;
+}
+
+.online-order-section [data-menu-kind="food"] .menu-option-groups {
+  gap: var(--menu-space-lg);
+  margin-top: var(--menu-space-xs);
+}
+
+.online-order-section [data-menu-kind="food"] .menu-option-group legend {
+  padding-top: var(--menu-space-md);
+}
+
+.online-order-section [data-menu-kind="food"] .menu-option-row {
+  padding: 10px var(--menu-space-sm);
+}
+
+.online-order-section [data-menu-kind="food"] .menu-actions {
+  display: flex;
+  justify-content: flex-start;
+  gap: var(--menu-space-xs);
+  padding-top: var(--menu-space-xs);
+}
+
+.online-order-section [data-menu-kind="food"] .menu-actions .button {
+  width: auto;
+  min-width: 156px;
+}
+
+.online-order-section .homemade-drink-row .menu-text-body {
+  padding: var(--menu-space-md) var(--menu-space-lg);
+}
+
+.online-order-section .alcohol-menu-row {
+  display: flex;
+  min-height: 0;
+  padding: var(--menu-space-lg);
+}
+
+.online-order-section .alcohol-menu-actions {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+}
+
+.online-order-section .alcohol-menu-actions .button-outline {
+  width: auto;
+  min-width: 132px;
+  max-width: 156px;
+  min-height: 44px;
+  color: var(--aq-ink);
+  border-color: transparent;
+  background: linear-gradient(180deg, var(--order-gold-bright), var(--order-gold));
+  opacity: 1;
+}
+
+.online-order-section .alcohol-menu-actions .button-outline:hover,
+.online-order-section .alcohol-menu-actions .button-outline:focus-visible {
+  color: var(--aq-ink);
+  background: linear-gradient(180deg, #e8c982, #b98935);
+}
+
+.online-order-section .menu-category-heading {
+  padding-inline: 0;
+}
+
+@media (max-width: 720px) {
+  .online-order-section .menu-category .menu-text-body,
+  .online-order-section [data-menu-kind="food"] .menu-text-body,
+  .online-order-section .homemade-drink-row .menu-text-body,
+  .online-order-section .alcohol-menu-row {
+    padding: var(--menu-space-md);
+  }
+
+  .online-order-section [data-menu-kind="food"] .menu-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .online-order-section [data-menu-kind="food"] .menu-actions .button {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .online-order-section .alcohol-menu-actions {
+    width: auto;
+    align-self: flex-start;
+  }
+
+  .online-order-section .alcohol-menu-actions .button-outline {
+    width: auto;
+    min-width: 132px;
+  }
+}

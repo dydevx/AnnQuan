@@ -79,6 +79,8 @@ const KATEGORIEN = [
   "Miến",
   "Cơm - Reisgerichte",
   "Dessert",
+  "Hausgemachte Getränke",
+  "Getränke mit Alkohol",
 ];
 
 const DISH_IMAGE_FOCUS = {
@@ -115,6 +117,18 @@ const MENU_ITEMS = [
     description: "Im Reispapier eingewickelte Reisnudeln, Karotten, Gurken, Salat, asiatischen Kräuter serviert mit einer Limetten-Chili-Fischsauce und schwarzem Sesam.",
     price: "6,00€",
     image: LOGO_IMAGE,
+    optionGroups: [
+      {
+        id: "fuellung",
+        title: "Wähle deine Füllung",
+        required: true,
+        options: [
+          { id: "tofu", label: "Tofu (6,00€)", priceDelta: 0 },
+          { id: "huhn", label: "Hühnerfleisch (6,00€)", priceDelta: 0 },
+          { id: "garnele", label: "Garnelen (6,00€)", priceDelta: 0 },
+        ],
+      },
+    ],
   },
   {
     id: "101",
@@ -303,90 +317,57 @@ const MENU_ITEMS = [
     ],
   },
   {
-    id: "304k",
+    id: "304",
     category: "Phở",
-    name: "304. Pho Tofu Klein",
-    description: "Reisbandnudelsuppe mit gebratenem Tofu.",
+    name: "304. Pho Tofu",
+    description: "Traditionelle vietnamesische Reisbandnudelsuppe mit gebratenem Tofu, acht Stunden gekochter Knochenbrühe, Frühlingszwiebeln, Koriander und Minze.",
     price: "7,00€",
     image: BILDER.pho,
+    optionGroups: [{ id: "size", title: "Wähle deine Größe", required: true, options: [
+      { id: "klein", label: "Klein", priceDelta: 0 },
+      { id: "gross", label: "Groß", priceDelta: 4.5 },
+    ] }],
   },
   {
-    id: "304g",
+    id: "305",
     category: "Phở",
-    name: "304. Pho Tofu Groß",
-    description: "Reisbandnudelsuppe mit gebratenem Tofu.",
-    price: "11,50€",
-    image: BILDER.pho,
-  },
-  {
-    id: "305a",
-    category: "Phở",
-    name: "305. Pho Xao mit Rindfleisch",
-    description: "Gebratene Reisnudeln mit Gemüse, Kräutern, Sprossen und Erdnüssen.",
-    price: "17,00€",
-    image: BILDER.pho,
-  },
-  {
-    id: "305b",
-    category: "Phở",
-    name: "305. Pho Xao mit Tofu-Streifen oder Gemüse",
-    description: "Gebratene Reisnudeln mit Gemüse, Kräutern, Sprossen und Erdnüssen.",
+    name: "305. Pho Xao",
+    description: "Gebratene Reisnudeln mit saisonalem Gemüse, asiatischen Kräutern, Sprossen und gehackten Erdnüssen.",
     price: "14,50€",
     image: BILDER.pho,
+    optionGroups: [{ id: "topping", title: "Wähle dein Topping", required: true, options: [
+      { id: "tofu", label: "Tofu-Streifen oder Gemüse", priceDelta: 0 },
+      { id: "huhn", label: "Hühnerfleisch", priceDelta: 1 },
+      { id: "rind", label: "Rindfleisch", priceDelta: 2.5 },
+      { id: "knusperhuhn", label: "Knuspriges Hühnchen", priceDelta: 3 },
+      { id: "ente", label: "Knusprige Ente", priceDelta: 4 },
+    ] }],
   },
   {
-    id: "305c",
-    category: "Phở",
-    name: "305. Pho Xao mit Hühnerfleisch",
-    description: "Gebratene Reisnudeln mit Gemüse, Kräutern, Sprossen und Erdnüssen.",
-    price: "15,50€",
-    image: BILDER.pho,
-  },
-  {
-    id: "305d",
-    category: "Phở",
-    name: "305. Pho Xao mit knusprigem Hühnchen",
-    description: "Gebratene Reisnudeln mit Gemüse, Kräutern, Sprossen und Erdnüssen.",
-    price: "17,50€",
-    image: BILDER.pho,
-  },
-  {
-    id: "305e",
-    category: "Phở",
-    name: "305. Pho Xao mit knuspriger Ente",
-    description: "Gebratene Reisnudeln mit Gemüse, Kräutern, Sprossen und Erdnüssen.",
-    price: "18,50€",
-    image: BILDER.pho,
-  },
-  {
-    id: "400k",
+    id: "400",
     category: "Miến",
-    name: "400. Mien Ga Klein",
-    description: "Glasnudeln mit Maishähnchenstreifen, Frühlingszwiebeln, Sprossen und Kräutern.",
+    name: "400. Mien Ga",
+    description: "Glasnudeln mit Maishähnchenstreifen, Frühlingszwiebeln, Sprossen, asiatischen Kräutern und einem halben Ei.",
     price: "8,00€",
     image: BILDER.mien,
-  },
-  {
-    id: "400g",
-    category: "Miến",
-    name: "400. Mien Ga Groß",
-    description: "Glasnudeln mit Maishähnchenstreifen, Frühlingszwiebeln, Sprossen und Kräutern.",
-    price: "15,50€",
-    image: BILDER.mien,
+    optionGroups: [{ id: "size", title: "Wähle deine Größe", required: true, options: [
+      { id: "klein", label: "Klein", priceDelta: 0 },
+      { id: "gross", label: "Groß", priceDelta: 7.5 },
+    ] }],
   },
   {
     id: "401",
     category: "Miến",
     name: "401. Mien Xao Tom",
-    description: "Gebratene Glasnudeln mit Garnelen, Gurken, Karotten, Pak Choi, Kräutern und Sesam.",
+    description: "Gebratene Glasnudeln mit Garnelen, Gurken, Karotten, Pak Choi, asiatischen Kräutern und weißem Sesam.",
     price: "18,40€",
     image: BILDER.mien,
   },
   {
     id: "402",
     category: "Miến",
-    name: "402. Mien Xao Ga",
-    description: "Gebratene Glasnudeln mit Hühnerfleisch, Gurken, Karotten, Pak Choi, Kräutern und Sesam.",
+    name: "402. Mien Xao Ga Chien",
+    description: "Gebratene Glasnudeln mit Hühnerfleisch, Gurken, Karotten, Pak Choi, asiatischen Kräutern und weißem Sesam.",
     price: "15,40€",
     image: BILDER.mien,
   },
@@ -394,7 +375,7 @@ const MENU_ITEMS = [
     id: "403",
     category: "Miến",
     name: "403. Mien Xao Vit",
-    description: "Gebratene Glasnudeln mit knuspriger Ente, Gurken, Karotten, Pak Choi, Kräutern und Sesam.",
+    description: "Gebratene Glasnudeln mit knuspriger Ente, Gurken, Karotten, Pak Choi, asiatischen Kräutern und weißem Sesam.",
     price: "18,40€",
     image: BILDER.mien,
   },
@@ -402,7 +383,7 @@ const MENU_ITEMS = [
     id: "404",
     category: "Miến",
     name: "404. Mien Xao Ga Chien",
-    description: "Gebratene Glasnudeln mit knusprigem Hähnchen, Gurken, Karotten, Pak Choi, Kräutern und Sesam.",
+    description: "Gebratene Glasnudeln mit knusprigem Hähnchen, Gurken, Karotten, Pak Choi, asiatischen Kräutern und weißem Sesam.",
     price: "17,40€",
     image: BILDER.mien,
   },
@@ -410,49 +391,83 @@ const MENU_ITEMS = [
     id: "500",
     category: "Cơm - Reisgerichte",
     name: "500. Com Tofu",
-    description: "Reisgericht mit verschiedenem Gemüse, frischen Kräutern und Sauce nach Wahl.",
+    description: "Sauce mit verschiedenem Gemüse (Paprika, Bambus, Lauchzwiebeln, Brokkoli, Chinakohl und Karotte), frischen Kräutern und Duftreis.",
     price: "14,50€",
     image: BILDER.com,
+    optionGroups: [
+      { id: "sauce", title: "Wähle deine Sauce", required: true, options: [
+        { id: "kokos-curry", label: "Kokosnussmilch und Curry Sauce (mild-scharf)", priceDelta: 0 },
+        { id: "dunkel", label: "Herzhafte dunkle Sauce", priceDelta: 0 },
+        { id: "erdnuss", label: "Erdnuss Sauce", priceDelta: 0 },
+        { id: "mango", label: "Fruchtige Mango Sauce", priceDelta: 0 },
+      ] },
+      { id: "beilage", title: "Wähle deine Beilage", required: false, options: [
+        { id: "reis", label: "Angebratener Reis", priceDelta: 3 },
+        { id: "reisnudeln", label: "Reisnudeln", priceDelta: 3 },
+        { id: "glasnudeln", label: "Glasnudeln", priceDelta: 3 },
+      ] },
+    ],
   },
   {
     id: "501",
     category: "Cơm - Reisgerichte",
     name: "501. Com Ga",
-    description: "Reisgericht mit Gemüse, Kräutern und Sauce nach Wahl.",
+    description: "Sauce mit verschiedenem Gemüse (Paprika, Bambus, Lauchzwiebeln, Brokkoli, Chinakohl und Karotte), frischen Kräutern und Duftreis.",
     price: "16,00€",
     image: BILDER.com,
+    optionGroups: [
+      { id: "sauce", title: "Wähle deine Sauce", required: true, options: [
+        { id: "kokos-curry", label: "Kokosnussmilch und Curry Sauce (mild-scharf)", priceDelta: 0 },
+        { id: "dunkel", label: "Herzhafte dunkle Sauce", priceDelta: 0 },
+        { id: "erdnuss", label: "Erdnuss Sauce", priceDelta: 0 },
+        { id: "mango", label: "Fruchtige Mango Sauce", priceDelta: 0 },
+        { id: "suess-sauer", label: "Süß-Sauer Sauce mit Ananas, Gurken, Paprika und Lauchzwiebeln", priceDelta: 0 },
+        { id: "roter-curry", label: "Roter Curry (scharf)", priceDelta: 0 },
+      ] },
+      { id: "beilage", title: "Wähle deine Beilage", required: false, options: [
+        { id: "reis", label: "Angebratener Reis", priceDelta: 3 }, { id: "reisnudeln", label: "Reisnudeln", priceDelta: 3 }, { id: "glasnudeln", label: "Glasnudeln", priceDelta: 3 },
+      ] },
+      { id: "sonderwunsch", title: "Dein Sonderwunsch", required: false, options: [{ id: "knusperhuhn", label: "Knuspriges Hähnchenfilet", priceDelta: 2 }] },
+    ],
   },
   {
     id: "502",
     category: "Cơm - Reisgerichte",
     name: "502. Com Vit",
-    description: "Reisgericht mit knusprigem Entenfilet, Gemüse, Kräutern und Sauce nach Wahl.",
+    description: "Sauce mit verschiedenem Gemüse (Paprika, Bambus, Lauchzwiebeln, Brokkoli, Chinakohl und Karotte), frischen Kräutern und Duftreis.",
     price: "16,90€",
     image: BILDER.com,
+    optionGroups: [
+      { id: "sauce", title: "Wähle deine Sauce", required: true, options: [
+        { id: "kokos-curry", label: "Kokosnussmilch und Curry Sauce (mild-scharf)", priceDelta: 0 }, { id: "dunkel", label: "Herzhafte dunkle Sauce", priceDelta: 0 }, { id: "erdnuss", label: "Erdnuss Sauce", priceDelta: 0 }, { id: "mango", label: "Fruchtige Mango Sauce", priceDelta: 0 }, { id: "suess-sauer", label: "Süß-Sauer Sauce mit Ananas, Gurken, Paprika und Lauchzwiebeln", priceDelta: 0 }, { id: "roter-curry", label: "Roter Curry (scharf)", priceDelta: 0 }, { id: "curry-frucht", label: "Roter Curry mit Kokosmilch, Ananas und Litschi", priceDelta: 0 },
+      ] },
+      { id: "beilage", title: "Wähle deine Beilage", required: false, options: [{ id: "reis", label: "Angebratener Reis", priceDelta: 3 }, { id: "reisnudeln", label: "Reisnudeln", priceDelta: 3 }, { id: "glasnudeln", label: "Glasnudeln", priceDelta: 3 }] },
+      { id: "sonderwunsch", title: "Dein Sonderwunsch", required: false, options: [{ id: "knusperente", label: "Knuspriges Entenfilet", priceDelta: 2 }] },
+    ],
   },
   {
     id: "503",
     category: "Cơm - Reisgerichte",
     name: "503. Com Thit Bo",
-    description: "Reisgericht mit Rindfleisch, Gemüse, Kräutern und Sauce nach Wahl.",
+    description: "Mit Rindfleisch. Sauce mit verschiedenem Gemüse (Paprika, Bambus, Lauchzwiebeln, Brokkoli, Chinakohl und Karotte), frischen Kräutern und Duftreis.",
     price: "17,50€",
     image: BILDER.com,
+    optionGroups: [
+      { id: "sauce", title: "Wähle deine Sauce", required: true, options: [{ id: "kokos-curry", label: "Kokosnussmilch und Curry Sauce (mild-scharf)", priceDelta: 0 }, { id: "dunkel", label: "Herzhafte dunkle Sauce", priceDelta: 0 }, { id: "erdnuss", label: "Erdnuss Sauce", priceDelta: 0 }, { id: "mango", label: "Fruchtige Mango Sauce", priceDelta: 0 }, { id: "suess-sauer", label: "Süß-Sauer Sauce mit Ananas, Gurken, Paprika und Lauchzwiebeln", priceDelta: 0 }] },
+      { id: "beilage", title: "Wähle deine Beilage", required: false, options: [{ id: "reis", label: "Angebratener Reis", priceDelta: 3 }, { id: "reisnudeln", label: "Reisnudeln", priceDelta: 3 }, { id: "glasnudeln", label: "Glasnudeln", priceDelta: 3 }] },
+    ],
   },
   {
     id: "504",
     category: "Cơm - Reisgerichte",
     name: "504. Com Hai San",
-    description: "Reisgericht mit Garnelen, Gemüse, Kräutern und Sauce nach Wahl.",
+    description: "Mit Garnelen. Sauce mit verschiedenem Gemüse (Paprika, Bambus, Lauchzwiebeln, Brokkoli, Chinakohl und Karotte), frischen Kräutern und Duftreis.",
     price: "19,00€",
     image: BILDER.com,
-  },
-  {
-    id: "beilage",
-    category: "Cơm - Reisgerichte",
-    name: "Extra Beilage",
-    description: "Angebratener Reis, Reisnudeln oder Glasnudeln.",
-    price: "3,00€",
-    image: BILDER.com,
+    optionGroups: [
+      { id: "sauce", title: "Wähle deine Sauce", required: true, options: [{ id: "kokos-curry", label: "Kokosnussmilch und Curry Sauce (mild-scharf)", priceDelta: 0 }, { id: "suess-sauer", label: "Süß-Sauer Sauce mit Ananas, Gurken, Paprika und Lauchzwiebeln", priceDelta: 0 }, { id: "curry-frucht", label: "Roter Curry mit Kokosmilch, Ananas und Litschi", priceDelta: 0 }] },
+      { id: "beilage", title: "Wähle deine Beilage", required: false, options: [{ id: "reis", label: "Angebratener Reis", priceDelta: 3 }, { id: "reisnudeln", label: "Reisnudeln", priceDelta: 3 }, { id: "glasnudeln", label: "Glasnudeln", priceDelta: 3 }] },
+    ],
   },
   {
     id: "700",
@@ -482,7 +497,7 @@ const MENU_ITEMS = [
     id: "703",
     category: "Dessert",
     name: "703. Mochi Eis",
-    description: "Zwei Klebreiskuchen mit verschiedenen Eisfüllungen.",
+    description: "Zwei Mochi-Klebreiskuchen mit Eisfüllungen in verschiedenen Geschmacksrichtungen: Schokolade, Mango, Maracuja, Kokosnuss oder Erdbeere.",
     price: "6,50€",
     image: BILDER.dessert,
   },
@@ -498,10 +513,27 @@ const MENU_ITEMS = [
     id: "705",
     category: "Dessert",
     name: "705. Fischwaffel",
-    description: "Gebackene Fischwaffel mit Schokolade, Erdbeeren oder Karamell.",
+    description: "Frisch gebackene, knusprige Waffel in Fischform mit einer Sauce nach Wahl.",
     price: "6,50€",
     image: BILDER.dessert,
+    optionGroups: [{ id: "sauce", title: "Wähle deine Sauce", required: true, options: [
+      { id: "schokolade", label: "Schokolade", priceDelta: 0 },
+      { id: "erdbeere", label: "Erdbeere", priceDelta: 0 },
+      { id: "karamell", label: "Karamell", priceDelta: 0 },
+    ] }],
   },
+  { id: "d01", category: "Hausgemachte Getränke", name: "Eistee Pfirsich 0,5 l", description: "Hausgemachter Pfirsich-Eistee.", price: "6,00€", image: LOGO_IMAGE },
+  { id: "d02", category: "Hausgemachte Getränke", name: "Eistee Maracuja 0,5 l", description: "Hausgemachter Maracuja-Eistee.", price: "6,00€", image: LOGO_IMAGE },
+  { id: "d03", category: "Hausgemachte Getränke", name: "Eistee Mango 0,5 l", description: "Hausgemachter Mango-Eistee.", price: "6,00€", image: LOGO_IMAGE },
+  { id: "d04", category: "Hausgemachte Getränke", name: "Eistee Aloe Vera 0,5 l", description: "Hausgemachter Aloe-Vera-Eistee.", price: "6,00€", image: LOGO_IMAGE },
+  { id: "d05", category: "Hausgemachte Getränke", name: "Hausgemachter Eistee 0,4 l", description: "Erfrischender Eistee nach Art des Hauses.", price: "6,00€", image: LOGO_IMAGE },
+  { id: "d06", category: "Hausgemachte Getränke", name: "Ingwer-Limetten-Soda 0,4 l", description: "Hausgemachte Soda mit Ingwer und Limette.", price: "6,00€", image: LOGO_IMAGE },
+  { id: "d07", category: "Hausgemachte Getränke", name: "Lychee Limo 0,4 l", description: "Hausgemachte Limonade mit Lychee.", price: "6,00€", image: LOGO_IMAGE },
+  { id: "d08", category: "Hausgemachte Getränke", name: "Mango Lassi", description: "Cremiges Joghurtgetränk mit Mango.", price: "6,50€", image: LOGO_IMAGE },
+  { id: "d09", category: "Hausgemachte Getränke", name: "Mango Soda", description: "Prickelnde Mango-Soda.", price: "6,50€", image: LOGO_IMAGE },
+  { id: "a01", category: "Getränke mit Alkohol", name: "Schöfferhofer Hefeweizen Dunkel 0.5l", description: "Nur für Personen ab 18 Jahren.", price: "4,82€", unitPrice: "9,64 €/L", deposit: "0,08 € Pfand", fixedFee: 0.08, volume: "500 ml", alcohol: "5% vol.", image: LOGO_IMAGE },
+  { id: "a02", category: "Getränke mit Alkohol", name: "Schöfferhofer Hefeweizen Alkoholfrei 0.5l", description: "Alkoholfreies Hefeweizen.", price: "4,82€", unitPrice: "9,64 €/L", deposit: "0,08 € Pfand", fixedFee: 0.08, volume: "500 ml", image: LOGO_IMAGE },
+  { id: "a03", category: "Getränke mit Alkohol", name: "Schöfferhofer Hefeweizen Hell 0.5l", description: "Nur für Personen ab 18 Jahren.", price: "4,82€", unitPrice: "9,64 €/L", deposit: "0,08 € Pfand", fixedFee: 0.08, volume: "500 ml", alcohol: "5% vol.", image: LOGO_IMAGE },
 ];
 
 function getDishImage(item) {
@@ -531,7 +563,7 @@ MENU_ITEMS.forEach((item) => {
   item.imageFocus = getDishImageFocus(item);
 });
 
-const SPECIALTY_IDS = ["106", "200", "300", "305e", "501", "703"];
+const SPECIALTY_IDS = ["106", "200", "300", "305", "501", "703"];
 const cart = {};
 
 const specialtyGrid = document.getElementById("specialtyGrid");
@@ -595,7 +627,7 @@ function renderMenuOptions(item) {
             <span>${group.title}</span>
             ${group.required ? `<em>Pflicht</em>` : ""}
           </legend>
-          <p class="menu-option-hint">1 auswählen</p>
+          <p class="menu-option-hint">${group.required ? "1 auswählen" : "Optional · 1 auswählen"}</p>
           <div class="menu-option-list">
             ${group.options.map((option) => `
               <label class="menu-option-row">
@@ -621,13 +653,13 @@ function getSelectedOptionState(item, trigger) {
       isValid: true,
       cartId: item.id,
       options: [],
-      price: item.price,
+      price: formatPrice(parsePrice(item.price) + Number(item.fixedFee || 0)),
     };
   }
 
   const card = trigger?.closest(`[data-menu-item-id="${item.id}"]`);
   const selections = [];
-  let total = parsePrice(item.price);
+  let total = parsePrice(item.price) + Number(item.fixedFee || 0);
   let isValid = true;
 
   groups.forEach((group) => {
@@ -679,7 +711,7 @@ function updateMenuCardPrice(card) {
   const total = getItemOptionGroups(item).reduce((sum, group) => {
     const selectedInput = card.querySelector(`input[name="option-${item.id}-${group.id}"]:checked`);
     return sum + Number(selectedInput?.dataset.optionPrice || 0);
-  }, parsePrice(item.price));
+  }, parsePrice(item.price) + Number(item.fixedFee || 0));
 
   priceElement.textContent = formatPrice(total);
 }
@@ -697,20 +729,46 @@ function buildOrderLine(item) {
 }
 
 function renderMenuCard(item, className = "menu-text-card reveal") {
+  if (item.category === "Getränke mit Alkohol") {
+    return `
+      <article class="${className} alcohol-menu-row" data-menu-item-id="${item.id}">
+        <div class="alcohol-menu-content">
+          <h4>${item.name}</h4>
+          <p class="alcohol-menu-meta">
+            <strong>${item.price}</strong>
+            <span>(${item.unitPrice})</span>
+            <span>+ ${item.deposit}</span>
+            <span aria-hidden="true">·</span>
+            <span>${item.volume}</span>
+          </p>
+          ${item.alcohol ? `<p class="alcohol-menu-volume">${item.alcohol}</p>` : ""}
+          <p class="alcohol-menu-note">${item.description}</p>
+        </div>
+        <div class="menu-actions alcohol-menu-actions">
+          <button class="button button-outline" type="button" data-cart-add="${item.id}" aria-label="${item.name} in den Warenkorb">Hinzufügen</button>
+        </div>
+      </article>
+    `;
+  }
+
+  const hasOptions = getItemOptionGroups(item).length > 0;
+  const isDrink = item.category === "Hausgemachte Getränke";
+
   return `
-    <article class="${className} menu-card-enter" data-menu-item-id="${item.id}">
+    <article class="${className} menu-card-enter${hasOptions ? " has-options" : ""}${isDrink ? " homemade-drink-row" : ""}" data-menu-item-id="${item.id}">
       <div class="menu-text-body">
         <div class="menu-text-top">
           <div>
             <h4>${item.name}</h4>
+            ${hasOptions ? `<p class="menu-choice-summary">Mit Auswahlmöglichkeiten</p>` : ""}
           </div>
-          <strong data-item-price>${item.price}</strong>
+          <strong data-item-price>${hasOptions ? `<small>ab</small> ` : ""}${item.price}</strong>
         </div>
         <p class="menu-item-description">${item.description}</p>
         ${renderMenuOptions(item)}
         <div class="menu-actions">
-          <button class="button button-outline" type="button" data-cart-add="${item.id}">In den Warenkorb</button>
-          <button class="button button-secondary" type="button" data-direct-order="${item.id}">Direkt bestellen</button>
+          <button class="button button-outline" type="button" data-cart-add="${item.id}">${isDrink ? "Hinzufügen" : "In den Warenkorb"}</button>
+          <button class="button button-secondary" type="button" data-direct-order="${item.id}">Sofort bestellen</button>
         </div>
       </div>
     </article>
@@ -743,10 +801,14 @@ function renderMenuList() {
 
   const category = KATEGORIEN[activeCategoryIndex];
   const items = MENU_ITEMS.filter((item) => item.category === category);
+  const menuKind = category === "Getränke mit Alkohol" ? "alcohol" : category === "Hausgemachte Getränke" ? "drinks" : "food";
 
   menuList.innerHTML = `
-    <section class="menu-category is-visible">
-      <h3>${category}</h3>
+    <section class="menu-category is-visible" data-menu-kind="${menuKind}">
+      <div class="menu-category-heading">
+        <h3>${category}</h3>
+        <p>${items.length} ${items.length === 1 ? "Artikel" : "Artikel"}</p>
+      </div>
       <div class="menu-items">
         ${items.map((item) => renderMenuCard(item, "menu-text-card")).join("")}
       </div>
