@@ -123,9 +123,9 @@ const MENU_ITEMS = [
         title: "Wähle deine Füllung",
         required: true,
         options: [
-          { id: "tofu", label: "Tofu (6,00€)", priceDelta: 0 },
-          { id: "huhn", label: "Hühnerfleisch (6,00€)", priceDelta: 0 },
-          { id: "garnele", label: "Garnelen (6,00€)", priceDelta: 0 },
+          { id: "maishaehnchen-ei", label: "Maishähnchen und Ei (6,50€)", priceDelta: 0.5 },
+          { id: "avocado-shrimps", label: "Avocado und Shrimps (7,00€)", priceDelta: 1 },
+          { id: "tofu-ei", label: "Tofu und Ei (6,00€)", priceDelta: 0 },
         ],
       },
     ],
@@ -266,7 +266,7 @@ const MENU_ITEMS = [
     category: "Phở",
     name: "301. Pho Bo Classic",
     description: "Mit saftigem Rindfleisch oder kurz angebratenem in medium rare. Traditionell Vietnamesische Reisbandnudelsuppen mit 8 Stunden gekochter knochenbrühe und ver. Gemüse (Frühlingszwiebeln, Koriander, Lauchzwiebeln und Minze).",
-    price: "9,90€",
+    price: "8,00€",
     image: BILDER.pho,
     optionGroups: [
       {
@@ -276,6 +276,16 @@ const MENU_ITEMS = [
         options: [
           { id: "klein", label: "Klein", priceDelta: 0 },
           { id: "gross", label: "Groß", priceDelta: 8 },
+        ],
+      },
+      {
+        id: "beef-preparation",
+        title: "Zubereitung des Rindfleischs",
+        required: true,
+        options: [
+          { id: "gekocht", label: "Rindfleisch gekocht", priceDelta: 0 },
+          { id: "rare", label: "Rindfleisch rare", priceDelta: 0 },
+          { id: "kurz-angebraten", label: "Rindfleisch kurz angebraten", priceDelta: 0 },
         ],
       },
     ],
